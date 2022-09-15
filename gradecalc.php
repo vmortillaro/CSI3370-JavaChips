@@ -11,6 +11,13 @@
 
 <body>
 
+<?php
+
+//how many grade fields are being made?
+//create a loop that outputs the correct number of fields
+//give them an id based on an incrementing variable
+
+?>
 
 </body>
 </html>
