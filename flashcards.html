@@ -1,0 +1,428 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" href="style.css">
+    <title>FlashCards</title>
+  </head>
+  <body>
+      <!-- Here this is setting up the colored pencils photo and the title 
+        for the page. You can begin editing outside of this but be careful -->
+      <div class="screenBackground">
+        <nav class="navbar">
+          <div class="logo">
+            <img src="img/Logo (1).jpg" width="80" height="80" />
+          </div>
+          <ul class="navItems">
+            <li class="tabNames">
+              <a href="index.html"> Home </a>
+            </li>
+            <li class="tabNames">
+              <a href="flashcards.html"> FlashCards </a>
+            </li>
+            <li class="tabNames">
+              <a href="toDoListPage.html"> Agenda </a>
+            </li>
+            <li class="tabNames">
+              <a href="classGrade.html"> Class Grade Calculator </a>
+            </li>
+            <li class="tabNames">
+              <a href="GPACalculator.html"> GPA Calculater </a>
+            </li>
+          </ul>
+          <div class="hamburger">
+            <div class="line1"></div>
+            <div class="line2"></div>
+            <div class="line3"></div>
+          </div>
+        </nav>
+
+<!--BUILD HERE-->
+
+
+<div class = "card">
+  <div class "create-flashcard">
+    <!--<h2 
+    style = "text-align: center;"
+    >Create flashcard</h2>
+    -->
+    
+    <!--Flashcard for entering the question-->
+    <!---->
+    <label for="question" 
+    style="position: absolute;
+    outline: #000;
+    color: rgb(255, 255, 255);
+    top:150px;
+    right:72%;
+    height: 300;
+    "
+    id = "questionLabel";
+    >Question</label>
+    
+  
+    <textarea style = "width:500px;
+    height:300px;
+    min-width: 500px;
+    max-width: 500px;
+    min-height: 300px;
+    max-height: 300px;
+    position: absolute;
+    top: 150px;
+    right: 45%;
+    font-size: 40px;
+    text-align: center;
+    padding: 80px 0;
+    "
+    id="question"
+    placeholder="Question";> 
+    </textarea>
+
+
+    
+
+    <!--textbox for entering the answer-->
+    <!---->
+    <label for="answer"
+    style="position: absolute;
+    color: rgb(0, 0, 0);
+    top:490px;
+    right:72%;
+    height: 300;
+    color: rgb(0, 0, 0);"
+    id = "answerLabel";
+    >Answer</label>
+    
+    <textarea
+    style = "width :500px;
+    height: 300px;
+    min-width: 500px;
+    max-width: 500px;
+    min-height: 300px;
+    max-height: 300px;
+    position: absolute;
+    top: 490px;
+    right: 45%;
+    font-size: 40px;
+    text-align: center;
+    padding: 20%;
+    padding: 80px 0;"
+
+  id="answer";
+    placeholder="Answer";>
+    </textarea>
+    </div>
+
+    
+
+    <!--Save card button-->
+    <button 
+    style = "
+    width: 60px;
+    height: 40px;
+    position: absolute;
+    top: 800px;
+    right: 40%;"
+    id = "saveCard";
+    >Save</button>
+
+    <!--Save for editing-->
+    <button
+    style = "
+    width: 60px;
+    height: 40px;
+    position: absolute;
+    top: 800px;
+    right: 60%;"
+    id = "saveEditCard";
+    >Save</button>
+
+    <!--Exit make card without saving the card-->
+    <button 
+    style = "
+    width: 60px;
+    height: 40px;
+    position: absolute;
+    top: 800px;
+    left:20%;
+    right: 50%;
+    
+    "
+    id = "closeButton";
+    >Close</button>
+    
+    </div>
+  </div>
+
+  <!--<div class="flashcards"> </div> -->
+
+
+
+
+<!--flashcard-->
+<div style="
+width:600px;
+height:400px;
+border:1px solid rgb(0, 0, 0);background-color: rgb(255, 255, 255);
+position:absolute;
+top: 250px;
+right: 37%;
+font-size: 40px;
+padding: 100px 0;
+text-align: center;
+word-wrap:normal;"
+id = "flashcardBox";
+>
+
+<!--flip button
+<button > Click to Flip 
+<div style = "width:604px;height:50px;
+position:relative;          
+bottom:-100%;
+margin-top: -200px;
+margin-bottom: 200px;
+margin-left: -10px;"> 
+</style></button>
+</div>
+-->
+
+
+ </div> <!--after the flashcard rectangle-->
+
+ <!--Delete set button-->
+ 
+
+<!--Sidebar-->
+ <div
+ style="
+ width:350px;
+ border:1px solid rgb(0, 0, 0);
+ background-color: rgb(252, 191, 211);
+ position:absolute;
+ top: 88px;
+ right: 0%;
+ bottom: 0px;"
+ id = "sidebar";
+ >
+ </div>
+
+
+
+
+<!--create new set button-->
+ <button
+ style ="
+ width: 80px;
+ height: 55px;
+ position: absolute;
+ top: 880px;
+ right: 250px;"
+ id = "newSetButton";
+ >Create New Set
+</button>
+
+
+
+<!--Delete set button-->
+<button
+style ="
+width: 80px;
+height: 55px;
+position: absolute;
+top: 880px;
+right: 1%"
+id = "deleteSetButton";
+>Delete Set
+</button>
+ 
+
+  <!--End of sidebar-->
+
+
+
+<!--Create new card in set button-->
+<button 
+style = "
+    width: 80px;
+    height: 55px;
+    position: absolute;
+    top: 800px;
+    right: 37%;"
+    id = "newCardInSet";
+    
+> Create new Card in set
+</button>
+
+<!--Delete current card button -->
+<button 
+style = "
+    width: 80px;
+    height: 55px;
+    position: absolute;
+    top: 800px;
+    left: 30%;"
+id="delete"
+> Delete Card
+</button>
+ 
+
+</div><!--end of card class-->
+
+
+
+
+
+
+<!--Next button -->
+<button 
+style = "width: 60px;
+  height: 40px;
+  position:absolute;          
+  top: 650px;
+  right: 37%;"
+  id = "nextButton";
+  > Next
+</style> </button>
+
+
+
+<!--Previous button -->
+<button 
+style = "width: 60px;
+  height: 40px;
+  position:absolute;          
+  top: 650px;
+  left: 30%;"
+  id = "previousButton";
+  > Previous
+</style> </button>
+
+<!--Edit button-->
+<button
+style = "width: 60px;
+height: 40px;
+position: absolute;
+top: 650px;
+right: 50%;"
+id = "editButton";
+>Edit Card
+</style></button>
+
+
+<!--Set Name -->
+<textarea style = "width :500px;
+    height: 65px;
+    min-width: 500px;
+    max-width: 500px;
+    min-height: 65px;
+    max-height: 65px;
+    position: absolute;
+    top: 85px;
+    right: 40%;
+    color: #000;
+    background-color: transparent;
+    border: transparent;
+    font-size: 40px;
+    overflow: hidden;
+    "
+    id="makeName"> 
+  </textarea>
+
+<!--
+  position: absolute;
+  top: 250px;
+ left: 100px;-->
+
+  <!--Start screen display -->
+ <div
+ style = 
+ "width: 500px;
+ height: 200px;
+ position: absolute;
+ top: 50%;
+ right: 45%;
+ background-color: rgba(172, 191, 232, 0.7);
+ font-size: 30px;
+text-align: center;
+padding: 80px 0;
+ " 
+ id = "StartText";
+
+
+ 
+ > Click on an old set or make a new one
+
+</div>
+
+
+
+
+<!--Delete all button-->
+<button
+style =
+"width: 80px;
+height: 55px;
+position: absolute;
+top: 100px;
+right: 1%;
+ "
+ id = "deleteAll";
+>Delete all</button>
+
+
+<!--block page untill disclaimer is accepted-->
+<div
+style = "
+position: absolute;
+top:88px;
+bottom: 0%;
+left: 0%;
+right: 0%;
+"
+id = "freeze";
+>
+  
+</div>
+
+
+<!--disclaimer-->
+<div
+style = "
+height: 100px;
+position: absolute;
+border:1px solid rgb(0, 0, 0);
+background-color: rgba(172, 191, 232, 0.7);
+text-align: center;
+font-size: 20px;
+top: 55%;
+right: 45%;
+"
+id = "disclaimer";
+>All changes will be saved to your local storage</div>
+
+<!--accept disclaimer-->
+<button
+style = "
+height: 50px;
+width: 50px;
+position: absolute;
+border:1px solid rgb(0, 0, 0);
+background-color: rgb(182, 132, 230);
+text-align: center;
+font-size: 20px;
+top: 60%;
+right: 54%;"
+id = "okDis";
+>OK</button>
+
+
+
+
+
+
+<!--STOP HERE-->
+    </div>
+    <script src="project.js"></script>
+  </body>
+</html>
