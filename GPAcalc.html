@@ -1,0 +1,84 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" href="style.css">
+    <title>GPA Calculator</title>
+</head>
+<body>
+    <!-- Here this is setting up the colored pencils photo and the title
+      for the page. You can begin editing outside of this but be careful -->
+    <div class="screenBackground">
+        <img src="Photos/randompic.png">
+        <nav class="navbar">
+            <div class="logo">
+                <img src="img/Logo (1).jpg" width="80" height="80" />
+            </div>
+            <ul class="navItems">
+                <li class="tabNames">
+                    <a href="index.html"> Home </a>
+                </li>
+                <li class="tabNames">
+                    <a href="flashcards.html"> FlashCards </a>
+                </li>
+                <li class="tabNames">
+                    <a href="toDoListPage.html"> Agenda </a>
+                </li>
+                <li class="tabNames">
+                    <a href="classGrade.html"> Class Grade Calculator </a>
+                </li>
+                <li class="tabNames">
+                    <a href="GPACalculator.html"> GPA Calculator </a>
+                </li>
+            </ul>
+            <div class="hamburger">
+                <div class="line1"></div>
+                <div class="line2"></div>
+                <div class="line3"></div>
+            </div>
+        </nav>
+        <style>
+            table, th, td {
+                border: 1px solid black;
+                border-collapse: collapse;
+            }
+        </style>
+        <style>
+        </style>
+        <h2>GPA Calculator</h2>
+
+        <table style="width:25%">
+            <tr>
+                <th style="width:20%">Grade Name</th>
+                <th>Grade</th>
+                <th>Credits</th>
+            </tr>
+            <tr>
+                <td><input type="text" name="name1" value="Enter Name:"></td>
+                <td><input type="text" name="ltrGrade1" value="Enter Letter Grade:"></td>
+                <td></td>
+            </tr>
+            <tr>
+                <td><input type="text" name="name2" value="Enter Name:"></td>
+                <td><input type="text" name="ltrGrade2" value="Enter Letter Grade:"></td>
+                <td></td>
+            </tr>
+            <tr>
+                <td><input type="text" name="name3" value="Enter Name:"></td>
+                <td><input type="text" name="ltrGrade3" value="Enter Letter Grade:"></td>
+                <td></td>
+            </tr>
+        </table>
+        <button type="button"
+                onclick="document.getElementById('calc').innerHTML = Number">
+            Calculate
+        </button>
+        <input type="text" name="GPA" value="">
+
+
+
+    </div>
+</body>
+    </html>
+
