@@ -1,0 +1,163 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+.screenBackground {
+  background-image: url("img/ColoredPencils.jpg");
+  background-size: cover;
+  background-repeat: no-repeat;
+  height: 100vh; /* 100vh stands for 'viewport height' and when we set it to 100 it means it will take up 100% of the viewing screen  */
+ 
+}
+.navbar {
+  background-color: rgb(172, 191, 232);
+  color: black;
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+
+  width: 100%;
+}
+.navItems {
+  list-style-type: none;
+  padding: 0 40px;
+}
+.tabNames {
+  display: inline-block;
+  padding: 3px 25px;
+}
+.navbar a {
+  text-decoration: none;
+}
+.navbar a:hover {
+  color: palevioletred;
+}
+.hamburger {
+  display: none;
+}
+.hamburger div {
+  width: 25px;
+  height: 3px;
+  background-color: blueviolet;
+  margin: 5px;
+}
+@media screen and (max-width: 770px) {
+  body {
+    overflow: hidden;
+  }
+  .navItems {
+    position: absolute;
+    right: 0px;
+    height: 92vh;
+    top: 15vh;
+    background-color: rgb(172, 191, 232);
+    flex-direction: column;
+    align-items: flex-end;
+    transform: translate(100%);
+  }
+  .tabNames {
+    opacity: 0;
+    padding: 10%;
+  }
+  .hamburger {
+    display: block;
+  }
+}
+.nav-active {
+  transform: translateX(0%);
+}
+@keyframes navLinkFade {
+  from {
+    opacity: 0;
+    transform: translateX(50px);
+  }
+  to {
+    opacity: 1;
+    transform: translateX(0px);
+  }
+}
+.logo {
+  float: left;
+  padding-top: 3px;
+  padding-bottom: 0px;
+}
+.logo img {
+  border-radius: 50%;
+}
+.sloganScreen-container {
+  background-color: rgba(237, 178, 225, 0.73);
+  padding: 1.5rem;
+  margin-top: 15vh;
+  margin-right: 20vh;
+  margin-left: 20vh;
+  border-radius: 1rem;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction:column;
+  font-size: 30px;
+}
+
+.iconPic {
+  width: 27vh;
+  height: 27vh;
+  padding: 20px; 
+}
+
+/* Password styling */
+.userFillPass {
+  background-color: rgba(172, 191, 232, 0.73);
+  padding:1rem;
+  margin-top: 10vh;
+  margin-right: 20vh;
+  margin-left: 20vh;
+  margin-bottom: 3vh ; 
+  border-radius: 1rem;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+  font-size: 15px;
+  font-weight: bold;
+}
+.userCheckBoxes{
+    display: grid;
+    grid-template-columns: auto auto;
+    row-gap: 1rem;
+    column-gap: 3rem;
+    justify-content: center;
+    align-items: center;
+  }
+.submitTheCriteria{
+  grid-column: span 2;
+    background-color: transparent;
+    border: 2px solid white;
+    color: palevioletred;
+    padding: .5rem .5rem;
+    margin: 2rem;
+    font-weight: bolder;
+    cursor: pointer;
+    border-radius: 1rem;
+}
+.submitTheCriteria:hover{
+  background-color: blueviolet;
+}
+.primary1{
+  padding-bottom: .5rem;
+}
+.passwordFinal{
+  background-color: white;
+  padding: 1rem;
+  margin: 2rem;
+    border: 1px solid #333;
+    height: 2rem;
+    width: 350px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    word-break: break-all;
+    border-radius: .5rem;
+}
+
