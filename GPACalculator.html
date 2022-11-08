@@ -51,8 +51,8 @@
         <div style=""
              id="sidebar" ;>
         </div>
-        <TABLE BORDER="0" CELLPADDING="5"
-               CELLSPACING="2">
+        <table style="width:25%;
+           background-color: rgb(255, 255, 255)">
             <tr>
                 <th style="width:20%">Grade Name</th>
                 <th>Grade</th>
@@ -76,92 +76,86 @@
                 <td><input type="text" name="Credit3" value=""></td>
                 <td></td>
             </tr>
-            <tr>
-                <td><input type="text" name="name4" value="Enter Name:"></td>
-                <td><input type="text" name="Grade4" value="Enter Letter Grade:"></td>
-                <td><input type="text" name="Credit4" value=""></td>
-                <td></td>
-            </tr>
-        </TABLE>
+        </table>
         <INPUT TYPE="BUTTON" VALUE="Calculate"
                NAME="CalcButton"
                OnClick="gpacalc()" />
         <input type="number" id="b" value="25">
-        <SCRIPT LANGUAGE="JavaScript">
+            <SCRIPT LANGUAGE="JavaScript">
 <!--
-            function gpacalc() {
-                var grades = new Array(9);
-                var credit = new Array(9);
-                var ingrades = new Array(5);
-                var incredit = new Array(5);
+                function gpacalc() {
+                    var grades = new Array(9);
+                    var credit = new Array(9);
+                    var ingrades = new Array(5);
+                    var incredit = new Array(5);
 
-                var grcount = 11;
-                grades[0] = "A+";
-                credit[0] = 5;
-                grades[1] = "A";
-                credit[1] = 4;
-                grades[2] = "A-";
-                credit[2] = 3.66;
-                grades[3] = "B+";
-                credit[3] = 3.33;
-                grades[4] = "B";
-                credit[4] = 3;
-                grades[5] = "B-";
-                credit[5] = 2.66;
-                grades[6] = "C+";
-                credit[6] = 2.33;
-                grades[7] = "C";
-                credit[7] = 2;
-                grades[8] = "C-";
-                credit[8] = 1.66;
-                grades[9] = "D";
-                credit[9] = 1;
-                grades[10] = "F";
-                credit[10] = 0;
-                // retrieve user input
-                ingrades[0] = document.Grade1.value;
-                ingrades[1] = document.Grade2.value;
-                ingrades[2] = document.Grade3.value;
-                incredit[0] = document.Credit1.value;
-                incredit[1] = document.Credit2.value;
-                incredit[2] = document.Credit3.value;
-                // Calculate GPA
-                var allgrades = 0;
-                var allcredit = 0;
-                var gpa = 0;
-                for (var x = 0; x < 5 + 3; x++) {
-                    if (ingrades[x] == "") break;
-                    var gradecheck = 0;
-                    for (var xx = 0; xx < grcount; xx++) {
-                        if (ingrades[x] == grades[xx]) {
-                            allgrades = allgrades + (parseInt(incredit[x], 10) * credit[xx]);
-                            allcredit = allcredit + parseInt(incredit[x], 10);
-                            gradecheck = 1;
-                            break;
+                    var grcount = 11;
+                    grades[0] = "A+";
+                    credit[0] = 5;
+                    grades[1] = "A";
+                    credit[1] = 4;
+                    grades[2] = "A-";
+                    credit[2] = 3.66;
+                    grades[3] = "B+";
+                    credit[3] = 3.33;
+                    grades[4] = "B";
+                    credit[4] = 3;
+                    grades[5] = "B-";
+                    credit[5] = 2.66;
+                    grades[6] = "C+";
+                    credit[6] = 2.33;
+                    grades[7] = "C";
+                    credit[7] = 2;
+                    grades[8] = "C-";
+                    credit[8] = 1.66;
+                    grades[9] = "D";
+                    credit[9] = 1;
+                    grades[10] = "F";
+                    credit[10] = 0;
+                    // retrieve user input
+                    ingrades[0] = document.Grade1.value;
+                    ingrades[1] = document.Grade2.value;
+                    ingrades[2] = document.Grade3.value;
+                    incredit[0] = document.Credit1.value;
+                    incredit[1] = document.Credit2.value;
+                    incredit[2] = document.Credit3.value;
+                    // Calculate GPA
+                    var allgrades = 0;
+                    var allcredit = 0;
+                    var gpa = 0;
+                    for (var x = 0; x < 5 + 3; x++) {
+                        if (ingrades[x] == "") break;
+                        var gradecheck = 0;
+                        for (var xx = 0; xx < grcount; xx++) {
+                            if (ingrades[x] == grades[xx]) {
+                                allgrades = allgrades + (parseInt(incredit[x], 10) * credit[xx]);
+                                allcredit = allcredit + parseInt(incredit[x], 10);
+                                gradecheck = 1;
+                                break;
+                            }
+                        }
+                        if (gradecheck == 0) {
+                            alert("Error- Could not recognize the grade entered for Class " + eval(x + 1) + ". Please use standard college grades in the form of A A- B+ ...F.");
+                            return 0;
                         }
                     }
-                    if (gradecheck == 0) {
-                        alert("Error- Could not recognize the grade entered for Class " + eval(x + 1) + ". Please use standard college grades in the form of A A- B+ ...F.");
+
+                    // for a divide by 0 error
+                    if (allcredit == 0) {
+                        alert("Error- You did not enter any credit values! GPA = N/A");
                         return 0;
                     }
-                }
 
-                // for a divide by 0 error
-                if (allcredit == 0) {
-                    alert("Error- You did not enter any credit values! GPA = N/A");
+                    gpa = allgrades / allcredit;
+
+                    alert("GPA =  " + eval(gpa));
+
                     return 0;
                 }
 
-                gpa = allgrades / allcredit;
-
-                alert("GPA =  " + eval(gpa));
-
-                return 0;
-            }
-
 //-->
 
-        </SCRIPT>
+            </SCRIPT>
 
 
 
