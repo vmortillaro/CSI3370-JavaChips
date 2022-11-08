@@ -74,7 +74,7 @@
         <INPUT TYPE="BUTTON" VALUE="Calculate"
                NAME="CalcButton"
                OnClick="gpacalc()" />
-        <input type="number" id="b" value="">
+        <div> id="GPAResult"</div>
         <script>
             const GPAGrade1 = document.getElementById('GPAGrade1')
             const GPAGrade2 = document.getElementById('GPAGrade2')
@@ -82,6 +82,7 @@
             const GPACredit1 = document.getElementById('GPACredit1')
             const GPACredit2 = document.getElementById('GPACredit2')
             const GPACredit3 = document.getElementById('GPACredit3')
+            const GPAResult = document.getElementById('GPAResult')
             function gpacalc() {
                 var grades = new Array(9);
                 var credit = new Array(9);
@@ -144,8 +145,8 @@
                     alert("Error- You did not enter any credit values! GPA = N/A");
                     return 0;
                 }
+               GPAResult.innerText = allgrades / allcredit;
 
-                gpa = allgrades / allcredit;
 
                 alert("GPA =  " + eval(gpa));
 
