@@ -4,6 +4,23 @@
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <link rel="stylesheet" href="style.css">
+    <style>
+      .calculator {
+        font-size: 16pt;
+        line-height:2;
+        background-color: rgba(172, 191, 232, 0.73);
+        padding:1rem;
+        margin-top: 10vh;
+        margin-right: 20vh;
+        margin-left: 20vh;
+        margin-bottom: 3vh ; 
+        border-radius: 1rem;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        flex-direction: column;
+      }
+    </style>
     <title>Class Grade Calculator</title>
   </head>
   <body>
@@ -41,7 +58,7 @@
 
 
 <!-- Insert you code here -->
-
+<div class="calculator" >
 <?php
 
 //before displaying, check if numfields changed. Default to 1.
@@ -142,7 +159,7 @@ $display .= $calculatebutton;
 //show the display
 echo $display;
 ?>
-
+</div>
 </div>
     <script src="project.js"></script>
   </body>

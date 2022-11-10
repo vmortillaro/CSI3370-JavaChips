@@ -3,11 +3,10 @@
   padding: 0;
   box-sizing: border-box;
 }
-
-.screenBackground {
+body {
   background-image: url("img/ColoredPencils.jpg");
   background-size: cover;
-  background-repeat: no-repeat;
+  background-repeat: repeat-y;
   height: 100vh; /* 100vh stands for 'viewport height' and when we set it to 100 it means it will take up 100% of the viewing screen  */
  
 }
