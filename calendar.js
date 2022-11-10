@@ -42,7 +42,7 @@ var cal = {
     cal.hMth.onchange = cal.list;
 
     // (B4) APPEND YEARS SELECTOR
-    // Set to 10 years range. Change this as you like.
+    // Set to 10 years range. 
     for (let i=nowYear-10; i<=nowYear+10; i++) {
       let opt = document.createElement("option");
       opt.value = i;
@@ -174,6 +174,7 @@ var cal = {
     cal.data[cal.sDay] = cal.hfTxt.value;
     localStorage.setItem(`cal-${cal.sMth}-${cal.sYear}`, JSON.stringify(cal.data));
     cal.list();
+    disclaimer();
     return false;
   },
 
@@ -183,5 +184,27 @@ var cal = {
     localStorage.setItem(`cal-${cal.sMth}-${cal.sYear}`, JSON.stringify(cal.data));
     cal.list();
   }}
+
 };
 window.addEventListener("load", cal.init);
+
+//disclaimer
+const disclaimerBox = document.getElementById("disclaimer");
+disclaimerBox.style.display = "none";
+  const okDis = document.getElementById("okDis");
+  okDis.style.display = "none";
+  const freeze = document.getElementById("freeze");
+  freeze.style.display = "none";
+
+  //Disclaimer about local storage
+    function disclaimer(){
+    disclaimerBox.style.display = "block";
+    okDis.style.display = "block";
+    freeze.style.display = "block";
+
+    okDis.addEventListener("click", function(){
+        disclaimerBox.style.display = "none";
+        okDis.style.display = "none";
+        freeze.style.display = "none";
+    });
+  }
