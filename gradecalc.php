@@ -54,7 +54,7 @@ if (is_numeric($_POST['numfields'])){
 //Define the heredoc that holds your entire display
 //create the form
 $display = <<<display
-<form action='gradecalc2.php' method='POST'>
+<form action='gradecalc.php' method='POST'>
 display;
 
 //field prompting how many grade fields are being made
