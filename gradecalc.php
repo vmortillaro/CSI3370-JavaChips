@@ -103,9 +103,9 @@ for ($index=0;$index<=($numfields-1); $index++){
 	$fieldinstance = <<<fieldinstance
 <label style="flex-grow: 1">Assignment Name: </label>
 <input style="flex-grow: 1" type='text' value='$storednames[$index]' name='assignmentname$index'> <br />
-<label style="flex-grow: 1">Point total: </label>
-<input style="flex-grow: 1" type='text' value='$storedgrades[$index]' name='assignmentgrade$index'> <br />
-<label style="flex-grow: 1"> points out of </label>
+<label style="flex-grow: 1">Points: </label>
+<input style="flex-grow: 1" type='text' value='$storedgrades[$index]' name='assignmentgrade$index'>
+<label style="flex-grow: 1">/</label>
 <input style="flex-grow: 1" type='text' value='$storedtotals[$index]' name='assignmenttotalpoints$index'> <br />
 <br /><br />
 fieldinstance;
