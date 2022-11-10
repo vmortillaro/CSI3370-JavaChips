@@ -143,7 +143,7 @@ if ($_POST['process'] == 'Update'){
 	}
 	$finalscoredisplay = <<<finalscoredisplay
 <label style="flex-grow: 1">Final Grade: </label> <br />
-<input style="flex-grow: 1" type='text' value='$percentage' name='finalgradetextbox'>&percnt;<br />
+<input style="flex-grow: 1" type='text' value='$percentage' name='finalgradetextbox'>&percnt;
 finalscoredisplay;
 	
 	//add it to the display
