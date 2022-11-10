@@ -32,22 +32,25 @@
             <img src="img/Logo (1).jpg" width="80" height="80" />
           </div>
           <ul class="navItems">
-            <li class="tabNames">
-              <a href="index.html"> Home </a>
-            </li>
-            <li class="tabNames">
-              <a href="flashcards.html"> FlashCards </a>
-            </li>
-            <li class="tabNames">
-              <a href="toDoListPage.html"> Agenda </a>
-            </li>
-            <li class="tabNames">
-              <a href="classGrade.html"> Class Grade Calculator </a>
-            </li>
-            <li class="tabNames">
-              <a href="GPACalculator.html"> GPA Calculater </a>
-            </li>
-          </ul>
+                <li class="tabNames">
+                    <a href="./index.html"> Home </a>
+                </li>
+                <li class="tabNames">
+                    <a href="./flashcards.html"> FlashCards </a>
+                </li>
+                <li class="tabNames">
+                    <a href="./calendar.html"> Agenda </a>
+                </li>
+                <li class="tabNames">
+                    <a href="./gradecalc.php"> Class Grade Calculator </a>
+                </li>
+                <li class="tabNames">
+                    <a href="./GPACalculator.html"> GPA Calculater </a>
+                </li>
+                <li class="tabNames">
+                    <a href="./password.html"> Password Generator </a>
+                </li>
+            </ul>
           <div class="hamburger">
             <div class="line1"></div>
             <div class="line2"></div>
