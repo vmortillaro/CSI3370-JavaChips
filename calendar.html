@@ -5,8 +5,26 @@
     <link href="calendar.css" rel="stylesheet">
     <link href="style.css" rel="stylesheet">
     <script async src="calendar.js"></script>
+    <style>
+      .calendar {
+        font-size: 16pt;
+        line-height:2;
+        background-color: rgba(172, 191, 232, 0.73);
+        padding:1rem;
+        margin-top: 10vh;
+        margin-right: 20vh;
+        margin-left: 20vh;
+        margin-bottom: 3vh ; 
+        border-radius: 1rem;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        flex-direction: column;
+      }
+    </style>
   </head>
   <body>
+
     <div class="screenBackground">
         <nav class="navbar">
             <div class="logo">
@@ -39,6 +57,9 @@
             </div>
         </nav>
 
+        <div class="calendar">
+
+
     <div id="cal-wrap">
       <!-- (A) PERIOD SELECTOR -->
       <div id="cal-date">
@@ -58,6 +79,7 @@
         <input id="evt-del" type="button" value="Delete"/>
         <input id="evt-save" type="submit" value="Save"/>
       </form>
+    </div>
     </div>
 
     <!--block page until disclaimer is accepted-->
