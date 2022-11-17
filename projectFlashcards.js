@@ -1,24 +1,4 @@
-/*
 
-const navSlider = () => {
-  const burger = document.querySelector(".hamburger");
-  const nav = document.querySelector(".navItems");
-  const navLinks = document.querySelectorAll(".navItems li");
-
-  burger.addEventListener("click", () => {
-    nav.classList.toggle("nav-active");
-  });
-  //this is for all the information in the hamburger menu. When the three lines are clicked, this is listening for that action
-
-  //This is populating the code with the nav bar with a delay so all the tabs slide onto the screen for the user
-  navLinks.forEach((link, index) => {
-    link.style.animation = `navLinkFade 0.5s ease forwards ${index / 7 + 0.8}s`;
-  });
-};
-//Calling the function to run everything
-navSlider();
-
-*/
 
 const flashCards = () => {
 
@@ -51,7 +31,7 @@ const flashCards = () => {
     //Start screen
     const startCardScreen = document.getElementById("StartTextFlashcard");
     
-    //disclaimer
+    //local storage disclaimer
     const disclaimerBoxFlashcard = document.getElementById("disclaimerFlashcard");
     disclaimerBoxFlashcard.style.display = "none";
     const okDisFlashcard = document.getElementById("okDisFlashcard");
@@ -61,12 +41,11 @@ const flashCards = () => {
     
     
     
-    
-    
-    
-    
-    
+    //calls strart page fuction 
     startPage();
+
+
+    //Displays only start screen items
     function startPage(){
     startCardScreen.style.display = "block";
     closeCard.style.display = "none";
@@ -88,15 +67,17 @@ const flashCards = () => {
     
     
     var cardX = 0;
+    //Current card set data
     var arrayOfCards = Array();
     var cardString = "";
     var currNum = 0;
     
+    //Set names and data
     var setArray = Array();
     var setNum = -1;
     
     
-    
+    //Names of the sets
     var setNameArray = Array();
     var currSetNum = 0;
     var countSets = 0;
@@ -190,12 +171,7 @@ const flashCards = () => {
     
     
     //Event lisioners
-    closeCard.addEventListener("click",closeCreateCard);
     newInSet.addEventListener("click", showCreateFlashcard);
-    
-    
-    
-    
     saveCard.addEventListener("click",saveCards);
     flashcardBox.addEventListener("click", flipCard);
     previousButtonFlashcard.addEventListener("click", previousCard);
@@ -214,7 +190,8 @@ const flashCards = () => {
         disclaimerBoxFlashcard.style.display = "block";
         okDisFlashcard.style.display = "block";
         freezeFlashcard.style.display = "block";
-    
+        
+        //Removes the disclaimer once user accepts it
         okDisFlashcard.addEventListener("click", function(){
             disclaimerBoxFlashcard.style.display = "none";
             okDisFlashcard.style.display = "none";
@@ -257,10 +234,11 @@ const flashCards = () => {
     closeCard.addEventListener("click", function(){
     
         disclaimerFlashcard();
+        closeCreateCard();
     })
     
     
-    //close create 
+    //close create card items
     function closeCreateCard(){
         closeCard.style.display = "none";
         saveCard.style.display = "none";
@@ -278,7 +256,8 @@ const flashCards = () => {
         deleteSet.style.display = "block";
         deleteSet.style.display = "block";
     
-    
+        //if there are muliplte cards there needs be a next button but
+        //if there is only one card in the set there should be no next button
         if(arrayOfCards.length > 2)
         {
             nextButtonFlashcard.style.display = "block";
@@ -295,10 +274,7 @@ const flashCards = () => {
     //Create a new set of cards 
     function createANewSet(){
         countSets++;
-        setName.innerHTML = "Untitled" + countSets; 
-        //Possibly unnessisary
-        setName.innerText = "Untitled" + countSets;
-        //keep
+        setName.innerHTML = "Untitled" + countSets;
         setName.value = setName.innerHTML;
     
         
@@ -321,7 +297,6 @@ const flashCards = () => {
        numArray[1] = setNum;
     
        localStorage.setItem('setCounters', JSON.stringify(numArray));
-        
         
         OldSetList(setArray[setArray.length -1]);
         disclaimerFlashcard();
@@ -373,6 +348,7 @@ const flashCards = () => {
     
      
     //Rename a Set
+        //When you click on the set name
         setName.addEventListener("click",function(){
             
             var tempNames = 0;
@@ -390,7 +366,7 @@ const flashCards = () => {
     
             
            
-       
+            //When you click off the set name
             setName.addEventListener("blur", function(){
                 
                 setNameArray[tempNames] = setName.value;
@@ -398,7 +374,7 @@ const flashCards = () => {
                 
                 var check1 = 0;
                 var check2 = 1;
-    
+                //Checks for doubles
                 while(check2 <= setNameArray.length -1){
                     if(setNameArray[check1] == setNameArray[check2]){
                         setNameArray.splice(check2,1);
@@ -418,7 +394,7 @@ const flashCards = () => {
     
                 localStorage.setItem('cardStack', JSON.stringify(setArray));
     
-                
+                //Removes old sidebar items so only the most current can be displayed
                 var sideChild = sidebarFlashcard.lastElementChild; 
                 while (sideChild) {
                 sidebarFlashcard.removeChild(sideChild);
@@ -443,7 +419,7 @@ const flashCards = () => {
     
     
     
-    //placeholder for cards in set
+    //placeholder for cards in set so there is input even if user does not add any
     function placeholderCard(){
         arrayOfCards[cardX] = "Question";
         cardX++;
@@ -513,6 +489,7 @@ const flashCards = () => {
         nextButtonFlashcard.style.display = "block";
     }
     
+    //switch between qustion and answer
     function flipCard(){
         if(cardString == arrayOfCards[currNum] ){
             cardString = arrayOfCards[currNum + 1];
@@ -545,7 +522,7 @@ const flashCards = () => {
     
     //Save after an edit
     function editAndSave(){
-        
+        //get user inputs for cards
      arrayOfCards[currNum] = document.getElementById("questionFlashcard").value;
      arrayOfCards[currNum + 1] = document.getElementById("answerFlashcard").value;
     
@@ -596,7 +573,7 @@ const flashCards = () => {
     
     }
     
-    
+    //Delete a set of flashcards
     function deleteFlashCardSet(){
     
         var findNameDel = 0;
@@ -633,24 +610,33 @@ const flashCards = () => {
     const deleteAll = document.getElementById("deleteAllFlashcard");
         
     deleteAll.addEventListener("click", function(){
-        localStorage.clear();
+        //remove all flashcard informantion in local storage
+        localStorage.removeItem("cardStack");
+        localStorage.removeItem("saveSidebar");
+        localStorage.removeItem("setCounters");
+
         flashcardBox.innerHTML = '';
         
+        //Remove array items
         arrayOfCards = [];
         setNameArray = [];
         setArray = [];
+        numArray = [];
     
         currSetNum = 0;
         countSets = 0;
-    
-        var sideChild = sidebarFlashcard.lastElementChild; 
         
+        
+        //clear sidebar
+        var sideChild = sidebarFlashcard.lastElementChild; 
         while (sideChild) {
         sidebarFlashcard.removeChild(sideChild);
         sideChild = sidebarFlashcard.lastElementChild;
         }
+
         startPage();
         disclaimerFlashcard();
+
         
         
     })
