@@ -1,8 +1,8 @@
 const navSlider = () => {
-  const burger = document.querySelector(".hamburger");
+  const burger = document.querySelector(".hamburger");//this is pulling from the HTML file
   const nav = document.querySelector(".navItems");
   const navLinks = document.querySelectorAll(".navItems li");
-
+  //this is the function when the three lines appear for the user when they click it it will display the tabs
   burger.addEventListener("click", () => {
     nav.classList.toggle("nav-active");
   });

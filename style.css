@@ -1,23 +1,26 @@
+/*This is to get rid of any default HTML page styling and ensure we can format it any way we need*/
 * {
   margin: 0;
   padding: 0;
   box-sizing: border-box;
 }
+/*this is to formate the picture that we use for the website*/
 body {
   background-image: url("img/ColoredPencils.jpg");
   background-size: cover; 
   background-repeat:repeat-y;
   height: 100vh; /* 100vh stands for 'viewport height' and when we set it to 100 it means it will take up 100% of the viewing screen  */
 }
+/*this is to format the nav bar for all the pages. This just makes sure all the spacing is correct and setting the colors*/
 .navbar {
   background-color: rgb(172, 191, 232);
   color: black;
   display: flex;
   justify-content: space-around;
   align-items: center;
-
   width: 100%;
 }
+/*this will get rid of any styling that comes as defaults for HTML unordered lists. I also fixed the padding because it manipulates the nav bar size*/
 .navItems {
   list-style-type: none;
   padding: 0 40px;
@@ -29,6 +32,7 @@ body {
 .navbar a {
   text-decoration: none;
 }
+/*when the user hovers over the nav bar it will change colors*/
 .navbar a:hover {
   color: palevioletred;
 }
@@ -41,6 +45,9 @@ body {
   background-color: blueviolet;
   margin: 5px;
 }
+/*this is the main styling that will handle the formatting when the user decreases the screen 
+you can see that this is pulling the main components that would be affected when the user decreases their
+screen. The @media part is checking when the screen decreases to a certain size. */
 @media screen and (max-width: 770px) {
   body {
     overflow: hidden;
@@ -66,6 +73,7 @@ body {
 .nav-active {
   transform: translateX(0%);
 }
+/*this is helping with the trasition of the elements of the nav bar*/
 @keyframes navLinkFade {
   from {
     opacity: 0;
@@ -76,6 +84,7 @@ body {
     transform: translateX(0px);
   }
 }
+/*formatting the logo div that holds it*/
 .logo {
   float: left;
   padding-top: 3px;
@@ -84,6 +93,7 @@ body {
 .logo img {
   border-radius: 50%;
 }
+/*formatting the div that is holding the javachips name and little slogan*/
 .sloganScreen-container {
   background-color: rgba(237, 178, 225, 0.73);
   padding: 1.5rem;
@@ -120,6 +130,7 @@ body {
   font-size: 15px;
   font-weight: bold;
 }
+/*formatting the checkboxes*/
 .userCheckBoxes{
     display: grid;
     grid-template-columns: auto auto;
