@@ -45,7 +45,7 @@
 }
 #calendar .dd {
   font-size: 1.2em;
-  color: #999;
+  color: rgb(0, 0, 0);
 }
 #calendar .evt {
   margin-top: 5px;
