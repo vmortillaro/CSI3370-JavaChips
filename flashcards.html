@@ -51,8 +51,8 @@
     >Create flashcard</h2>
     -->
     
-    <!--Flashcard for entering the question-->
-    <!---->
+    <!--The next two blocks of code are for the the textare for the user to enter a question-->
+    <!--This is the label so user know which box is for the question-->
     <label for="question" 
     style="position: absolute;
     outline: #000;
@@ -64,7 +64,10 @@
     id = "questionLabelFlashcard";
     >Question</label>
     
-  
+  <!--This is the textarea where the user actually types the question there is 
+    placeholder text so the user knows what to type inside it is a light text that disappears when the user starts typeing
+    The placemant and look of the text area is also set up.
+    The text inside was also made larger so it is easier to see -->
     <textarea style = "width:500px;
     height:300px;
     min-width: 500px;
@@ -85,8 +88,9 @@
 
     
 
-    <!--textbox for entering the answer-->
-    <!---->
+    <!--The next two blocks are for the textarea for the user to enter answers-->
+    <!--This label is for the answer textarea so user know to enter the answer in the space provided
+    The positioning and coloring are also in this block-->
     <label for="answer"
     style="position: absolute;
     color: rgb(0, 0, 0);
@@ -97,6 +101,9 @@
     id = "answerLabelFlashcard";
     >Answer</label>
     
+    <!--This is the textarea designed for user to enter the answer side of the flashcard
+    There is placeholder text so it is very clear to the user what the box is for 
+    The postioning and size was also coded below along with the text size-->
     <textarea
     style = "width :500px;
     height: 300px;
@@ -119,7 +126,7 @@
 
     
 
-    <!--Save card button-->
+    <!--This is the code for the button that saves cards when the user is creating a set or adding to one-->
     <button 
     style = "
     width: 60px;
@@ -130,7 +137,7 @@
     id = "saveCard";
     >Save</button>
 
-    <!--Save for editing-->
+    <!--This code is for the save button used when the user is editing a prexisting card in a set-->
     <button
     style = "
     width: 60px;
@@ -141,7 +148,7 @@
     id = "saveEditCard";
     >Save</button>
 
-    <!--Exit make card without saving the card-->
+    <!--below is the code for the close button that will allow users to get out of the making card items and start viewing their flashcard set-->
     <button 
     style = "
     width: 60px;
@@ -150,7 +157,6 @@
     top: 800px;
     left:20%;
     right: 50%;
-    
     "
     id = "closeButtonFlashcard";
     >Close</button>
@@ -158,12 +164,8 @@
     </div>
   </div>
 
-  <!--<div class="flashcards"> </div> -->
 
-
-
-
-<!--flashcard-->
+<!--This block if for the actual flashcard it was postion and colored I also ajusted the text inside so it would be larger and wrap so it will all show on the card-->
 <div style="
 width:600px;
 height:400px;
@@ -182,7 +184,7 @@ id = "flashcardBox";
 
  
 
-<!--Sidebar-->
+<!--The sidebar is coded below and this is where the users sets will be displayed so they can get back to them-->
  <div
  style="
  width:350px;
@@ -199,13 +201,13 @@ id = "flashcardBox";
 
 
 
-<!--create new set button-->
+<!--Below is the button for the user to create new set-->
  <button
  style ="
  width: 80px;
  height: 55px;
  position: absolute;
- top: 880px;
+ bottom: 50px;
  right: 250px;"
  id = "newSetButton";
  >Create New Set
@@ -213,57 +215,50 @@ id = "flashcardBox";
 
 
 
-<!--Delete set button-->
+<!--This code is for the button that allows the user to delete a set-->
 <button
 style ="
 width: 80px;
 height: 55px;
 position: absolute;
-top: 880px;
+bottom:50px;
 right: 1%"
 id = "deleteSetButton";
 >Delete Set
 </button>
  
 
-  <!--End of sidebar-->
-
-
-
-<!--Create new card in set button-->
+<!--This button will allow the user to create a new card in a specific set-->
 <button 
 style = "
     width: 80px;
     height: 55px;
     position: absolute;
-    top: 800px;
+    bottom: 150px;
     right: 37%;"
     id = "newCardInSet";
     
 > Create new Card in set
 </button>
 
-<!--Delete current card button -->
+<!--The button below will allow users to delete the card they are currenly viewing from the set -->
 <button 
 style = "
     width: 80px;
     height: 55px;
     position: absolute;
-    top: 800px;
+    bottom: 150px;
     left: 30%;"
 id="deleteFlashcard"
 > Delete Card
 </button>
  
 
-</div><!--end of card class-->
+</div>
 
 
 
-
-
-
-<!--Next button -->
+<!--This button allows the user to get to the next card in the set-->
 <button 
 style = "width: 60px;
   height: 40px;
@@ -276,7 +271,7 @@ style = "width: 60px;
 
 
 
-<!--Previous button -->
+<!--This code will make a button that will let the user get to the previous button in the set -->
 <button 
 style = "width: 60px;
   height: 40px;
@@ -287,7 +282,7 @@ style = "width: 60px;
   > Previous
 </style> </button>
 
-<!--Edit button-->
+<!--The block below is for the button that allows the user to edit the curently displayed card-->
 <button
 style = "width: 60px;
 height: 40px;
@@ -299,7 +294,8 @@ id = "editButtonFlashcard";
 </style></button>
 
 
-<!--Set Name -->
+<!--This is the area that will display the name of the set and also allow users to change the set name
+I set background to be invisable and the text color to black as well as increase font size. The overflow will be hidden so there is no scroll bar in the textarea-->
 <textarea style = "width :500px;
     height: 65px;
     min-width: 500px;
@@ -319,7 +315,8 @@ id = "editButtonFlashcard";
   </textarea>
 
 
-  <!--Start screen display -->
+  <!--This block will be the start screen which is what the user sees when they enter the page or delete their set 
+  I made the background color is slightly see through and centered the text-->
  <div
  style = 
  "width: 500px;
@@ -333,8 +330,6 @@ text-align: center;
 padding: 80px 0;
  " 
  id = "StartTextFlashcard";
-
-
  
  > Click on an old set or make a new one
 
@@ -343,7 +338,7 @@ padding: 80px 0;
 
 
 
-<!--Delete all button-->
+<!--This button was made to allow user to remove all saved flashcards from local storage-->
 <button
 style =
 "width: 80px;
@@ -355,8 +350,9 @@ right: 1%;
  id = "deleteAllFlashcard";
 >Delete all</button>
 
+<!--The next three blocks of code are for the local storage disclaimer-->
 
-<!--block page untill disclaimer is accepted-->
+<!--This will block the page untill the disclaimer is accepted-->
 <div
 style = "
 position: absolute;
@@ -371,7 +367,7 @@ id = "freezeFlashcard";
 </div>
 
 
-<!--disclaimer-->
+<!--This block is what contains the words on the disclaimer-->
 <div
 style = "
 height: 100px;
@@ -384,9 +380,9 @@ top: 55%;
 right: 45%;
 "
 id = "disclaimerFlashcard";
->All changes will be saved to your local storage</div>
+>All changes have been saved to your local storage</div>
 
-<!--accept disclaimer-->
+<!--This block is for the button that allows the user to accept the disclaimer-->
 <button
 style = "
 height: 50px;
@@ -400,10 +396,6 @@ top: 60%;
 right: 54%;"
 id = "okDisFlashcard";
 >OK</button>
-
-
-
-
 
 
 <!--STOP HERE-->
