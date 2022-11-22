@@ -41,22 +41,28 @@
             </div>
         </nav>
 
+        <div class="userFillPass">
+          <img src="img/conv.png" alt="Conversion" style="padding-bottom: 20px; width:1000px;" >
+            <!--Style for the tab;e to fix its position and change its width, transfrom it, amd give it an id -->
+            <table id="GPAtable" >
 
-
-        <!-- Insert you code here -->
-        <div style="">
-            <table style="width:25%" ; id="GPAtable" body { background-color: white; }>
-                <tr>
-                    <th style="width: 20%" ;>Grade Name</th>
+                <tr style="background-color:rgb(233, 178, 187);width: 10px;">
+                    <!-- Titles for the table as well as a width-->
+                    <th>Grade Name</th>
                     <th>Grade</th>
                     <th>Credits</th>
                 </tr>
-                <tr>
+                <!--20 Field rows added with 3 columns adding upt to 60 fields-->
+                <tr style="">
+                    <!--Name you want added, doesnt affect calculations, just for show-->
                     <td><input type="text" name="name1" id="GPAName1" value="Enter Name:" /></td>
+                    <!--field for the letter Grade you want added, gets put into calculations-->
                     <td><input type="text" name="Grade1" id="GPAGrade1" value="" /></td>
+                    <!--field for the credit of the class, gets added to the later calculations-->
                     <td><input type="text" name="Credit1" id="GPACredit1" value="" /></td>
                     <td></td>
                 </tr>
+                <!--the previously described fields get added a total of 20 times to account for as many classes as the user wants added-->
                 <tr>
                     <td><input type="text" name="name2" id="GPAName2" value="Enter Name:" /></td>
                     <td><input type="text" name="Grade2" id="GPAGrade2" value="" /></td>
@@ -172,13 +178,19 @@
                 </tr>
 
             </table>
-            <input type="BUTTON" value="Calculate" name="CalcButton" OnClick="calculateGPA()" />
+            <!--Added the "Calculate" button, this allows for the usage of the javascript file which runs the calculations-->
+            <input id="submitPass1"
+            class="submitTheCriteria" type="BUTTON" value="Calculate" name="CalcButton" OnClick="calculateGPA()" />
+            <!--the field that the javascript calculations use to print the accurate GPA-->
             <input type="text" id="GPA" value="">
             <div id="GPAResult"></div>
-            <img src="img/conv.png" alt="Conversion" style="width: 168px; height: 421px; float:right;">
+            <!--A conversion chart of grades to numerical scores, allows for accurate GPA even if your school shows your differently-->
+            
 
         </div>
     </div>
+    <!--Uses the file "GPACalc.js" to calculate the accurate GPA-->
     <script src="GPACalc.js"></script>
+    <script src="project.js"></script>
 </body>
 </html>

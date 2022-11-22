@@ -1,8 +1,10 @@
+//A constant array that stores letter grades alongside their GPA counterparts
 const possibleGrades = { "A": 4, "A-": 3.7, "B+": 3.3, "B": 3, "B-": 2.7, "C+": 2.3, "C": 2, "C-": 1.7, "D+": 1.3, "D": 1, "F": 0 };
+
 const myGrades = [GPAGrade1, GPAGrade2, GPAGrade3];
 const GPAoutput = document.getElementById("GPA");
 function calculateGPA() {
-  //Setup
+  //This takes all of the inputs the user gives from every grade and wieght field and addits it to their own seperate arrays
   const GPAGrade1 = document.getElementById("GPAGrade1").value;
   const GPAGrade2 = document.getElementById("GPAGrade2").value;
     const GPAGrade3 = document.getElementById("GPAGrade3").value;
@@ -43,6 +45,7 @@ function calculateGPA() {
     const weight18 = document.getElementById("GPACredit18").value;
     const weight19 = document.getElementById("GPACredit19").value;
     const weight20 = document.getElementById("GPACredit20").value;
+    //the arrays of all the documented lette rgrades and weights
     const classWeights = [weight1, weight2, weight3, weight4, weight5, weight6, weight7, weight8, weight9,
         weight10, weight11, weight12, weight13, weight14, weight15, weight16, weight17, weight18, weight19, weight20];
     const myGrades = [GPAGrade1, GPAGrade2, GPAGrade3, GPAGrade4, GPAGrade5, GPAGrade6, GPAGrade7, GPAGrade8, GPAGrade9,
@@ -58,7 +61,7 @@ function calculateGPA() {
   GPA = 0;
   totalWeight = 0;
     for (x = 0; x < myGrades.length; x++) {
-    //Error Handling
+    //Errors for sing wrong letters or weights
       if (!Number(possibleGrades[myGrades[x]])) {
         alert("USE CORRECT LETTERS !")
         GPAoutput.value = "Use it right..."
@@ -70,7 +73,7 @@ function calculateGPA() {
         return
       }
 
-      //Calculate on success
+      //The part that calculates the GPA
       totalWeight += parseInt(classWeights[x]);
       GPA += possibleGrades[myGrades[x]] * classWeights[x];
     }
