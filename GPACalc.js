@@ -68,8 +68,8 @@ function calculateGPA() {
         return
       }
       if (!Number.isInteger(parseInt(classWeights[x]))) {
-        alert("Error: Please enter in the needed weights and grades to get a proper calculation.")
-        GPAoutput.value = "Error: Please enter in the needed weights and grades to get a proper calculation."
+        alert("Error: Please enter in the appropriate weights to get a proper calculation.")
+        GPAoutput.value = "Error: Please enter in approproate weights to get a proper calculation."
         return
       }
 
