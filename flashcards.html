@@ -69,7 +69,7 @@
     The placemant and look of the text area is also set up.
     The text inside was also made larger so it is easier to see -->
     <textarea style = "width:500px;
-    height:300px;
+    height: 500px;
     min-width: 500px;
     max-width: 500px;
     min-height: 300px;
@@ -94,7 +94,7 @@
     <label for="answer"
     style="position: absolute;
     color: rgb(0, 0, 0);
-    top:490px;
+    top:470px;
     right:72%;
     height: 300;
     color: rgb(0, 0, 0);"
@@ -112,7 +112,7 @@
     min-height: 300px;
     max-height: 300px;
     position: absolute;
-    top: 490px;
+    top: 470px;
     right: 45%;
     font-size: 40px;
     text-align: center;
@@ -129,34 +129,45 @@
     <!--This is the code for the button that saves cards when the user is creating a set or adding to one-->
     <button 
     style = "
+    background-color: rgba(172, 191, 232, 0.73);
+    border: 2px solid rgb(255, 255, 255);
+    color: palevioletred;
+    cursor: pointer;
     width: 60px;
     height: 40px;
     position: absolute;
-    top: 800px;
-    right: 40%;"
+    top: 775px;
+    right: 45%;"
     id = "saveCard";
     >Save</button>
 
     <!--This code is for the save button used when the user is editing a prexisting card in a set-->
     <button
     style = "
+    background-color: rgba(172, 191, 232, 0.73);
+    border: 2px solid rgb(255, 255, 255);
+    color: palevioletred;
+    cursor: pointer;
     width: 60px;
     height: 40px;
     position: absolute;
     top: 800px;
-    right: 60%;"
+    right: 56.5%;"
     id = "saveEditCard";
     >Save</button>
 
     <!--below is the code for the close button that will allow users to get out of the making card items and start viewing their flashcard set-->
     <button 
     style = "
+    background-color: rgba(172, 191, 232, 0.73);
+    border: 2px solid rgb(255, 255, 255);
+    color: palevioletred;
+    cursor: pointer;
     width: 60px;
     height: 40px;
     position: absolute;
-    top: 800px;
-    left:20%;
-    right: 50%;
+    top: 775px;
+    right: 68%;
     "
     id = "closeButtonFlashcard";
     >Close</button>
@@ -204,6 +215,10 @@ id = "flashcardBox";
 <!--Below is the button for the user to create new set-->
  <button
  style ="
+ background-color: rgba(172, 191, 232, 0.73);
+  border: 2px solid rgb(255, 255, 255);
+  color: palevioletred;
+  cursor: pointer;
  width: 80px;
  height: 55px;
  position: absolute;
@@ -218,6 +233,10 @@ id = "flashcardBox";
 <!--This code is for the button that allows the user to delete a set-->
 <button
 style ="
+background-color: rgba(172, 191, 232, 0.73);
+border: 2px solid rgb(255, 255, 255);
+color: palevioletred;
+cursor: pointer;
 width: 80px;
 height: 55px;
 position: absolute;
@@ -231,6 +250,10 @@ id = "deleteSetButton";
 <!--This button will allow the user to create a new card in a specific set-->
 <button 
 style = "
+background-color: rgba(172, 191, 232, 0.73);
+    border: 2px solid rgb(255, 255, 255);
+    color: palevioletred;
+    cursor: pointer;
     width: 80px;
     height: 55px;
     position: absolute;
@@ -244,6 +267,10 @@ style = "
 <!--The button below will allow users to delete the card they are currenly viewing from the set -->
 <button 
 style = "
+background-color: rgba(172, 191, 232, 0.73);
+    border: 2px solid rgb(255, 255, 255);
+    color: palevioletred;
+    cursor: pointer;
     width: 80px;
     height: 55px;
     position: absolute;
@@ -260,10 +287,15 @@ id="deleteFlashcard"
 
 <!--This button allows the user to get to the next card in the set-->
 <button 
-style = "width: 60px;
+style = "
+  background-color: rgba(172, 191, 232, 0.73);
+  border: 2px solid rgb(255, 255, 255);
+  color: palevioletred;
+  cursor: pointer;
+  width: 60px;
   height: 40px;
   position:absolute;          
-  top: 650px;
+  bottom: 250px;
   right: 37%;"
   id = "nextButtonFlashcard";
   > Next
@@ -273,10 +305,15 @@ style = "width: 60px;
 
 <!--This code will make a button that will let the user get to the previous button in the set -->
 <button 
-style = "width: 60px;
+style = "
+  background-color: rgba(172, 191, 232, 0.73);
+  border: 2px solid rgb(255, 255, 255);
+  color: palevioletred;
+  cursor: pointer;
+  width: 60px;
   height: 40px;
   position:absolute;          
-  top: 650px;
+  bottom: 250px;
   left: 30%;"
   id = "previousButtonFlashcard";
   > Previous
@@ -284,10 +321,15 @@ style = "width: 60px;
 
 <!--The block below is for the button that allows the user to edit the curently displayed card-->
 <button
-style = "width: 60px;
+style = "
+background-color: rgba(172, 191, 232, 0.73);
+border: 2px solid rgb(255, 255, 255);
+color: palevioletred;
+cursor: pointer;
+width: 60px;
 height: 40px;
 position: absolute;
-top: 650px;
+bottom: 250px;
 right: 50%;"
 id = "editButtonFlashcard";
 >Edit Card
@@ -341,7 +383,11 @@ padding: 80px 0;
 <!--This button was made to allow user to remove all saved flashcards from local storage-->
 <button
 style =
-"width: 80px;
+"background-color: rgba(172, 191, 232, 0.73);
+border: 2px solid rgb(255, 255, 255);
+color: palevioletred;
+cursor: pointer;
+width: 80px;
 height: 55px;
 position: absolute;
 top: 100px;
@@ -385,11 +431,13 @@ id = "disclaimerFlashcard";
 <!--This block is for the button that allows the user to accept the disclaimer-->
 <button
 style = "
+background-color: pink;
+border: 2px solid rgb(255, 255, 255);
+color: palevioletred;
+cursor: pointer;
 height: 50px;
 width: 50px;
 position: absolute;
-border:1px solid rgb(0, 0, 0);
-background-color: rgb(182, 132, 230);
 text-align: center;
 font-size: 20px;
 top: 60%;
