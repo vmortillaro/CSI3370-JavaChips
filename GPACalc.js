@@ -63,13 +63,13 @@ function calculateGPA() {
     for (x = 0; x < myGrades.length; x++) {
     //Errors for sing wrong letters or weights
       if (!Number(possibleGrades[myGrades[x]])) {
-        alert("USE CORRECT LETTERS !")
-        GPAoutput.value = "Use it right..."
+        alert("Error: Please use appropriate letters when entering your grades. ")
+        GPAoutput.value = "Error: Please use appropriate letters when entering your grades. "
         return
       }
       if (!Number.isInteger(parseInt(classWeights[x]))) {
-        alert("NO  !")
-        GPAoutput.value = "Use it right..."
+        alert("Error: Please enter in the needed weights and grades to get a proper calculation.")
+        GPAoutput.value = "Error: Please enter in the needed weights and grades to get a proper calculation."
         return
       }
 

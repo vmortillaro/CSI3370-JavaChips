@@ -40,10 +40,19 @@
                 <div class="line3"></div>
             </div>
         </nav>
-
+<!userFillPass is important because it is formatting all the content in one box. Just so all the elements stay within the desired box then thats why I do that>
         <div class="userFillPass">
-          <img src="img/conv.png" alt="Conversion" style="padding-bottom: 20px; width:1000px;" >
-            <!--Style for the tab;e to fix its position and change its width, transfrom it, amd give it an id -->
+            <!this div is being used to provide directiosn to the user. To ensure the UI is being properly used: Added by Val H>
+        <div style="background-color:rgb(233, 178, 187,0.80); padding: 10px; border-radius: 10%;">
+        <p>Hello! Welcome to the GPA Calculator! Go ahead and enter any name for your class.</p> 
+        <p>From there please enter an Upper Case Letter from the following options corresponding to the table below: A, B, C, D, F </p>
+        <p>From there add the number of credits that this class is worth. For Example: 4, 3, 2, 1</p>  
+        <p>Enter the amount of criteria as desired then scroll down and press submit. Once you press submit your GPA will appear in the box below the button</p> 
+        <p>From there you're done! Thank you for using JavaChips University</p> 
+        </div>
+            <!this is the conversion table that the user will check this>
+        <img src="img/conv.png" alt="Conversion" style="padding-bottom: 20px;padding-top:10px; width:1000px;" >
+            <!--Style for the table to fix its position and change its width, transfrom it, amd give it an id -->
             <table id="GPAtable" >
 
                 <tr style="background-color:rgb(233, 178, 187);width: 10px;">
@@ -191,6 +200,7 @@
     </div>
     <!--Uses the file "GPACalc.js" to calculate the accurate GPA-->
     <script src="GPACalc.js"></script>
+    <!adds the responsiveness to the nav bar>
     <script src="project.js"></script>
 </body>
 </html>
