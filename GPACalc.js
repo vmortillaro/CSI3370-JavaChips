@@ -62,7 +62,7 @@ function calculateGPA() {
   totalWeight = 0;
     for (x = 0; x < myGrades.length; x++) {
     //Errors for sing wrong letters or weights
-      if (!Number(possibleGrades[myGrades[x]])) {
+        if (!Number(possibleGrades[myGrades[x]]) && possibleGrades[myGrades[x] != "F"]) {
         alert("Error: Please use appropriate letters when entering your grades. ")
         GPAoutput.value = "Error: Please use appropriate letters when entering your grades. "
         return
