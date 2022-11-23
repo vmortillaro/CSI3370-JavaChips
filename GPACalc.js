@@ -1,5 +1,5 @@
 //A constant array that stores letter grades alongside their GPA counterparts
-const possibleGrades = { "A": 4, "A-": 3.7, "B+": 3.3, "B": 3, "B-": 2.7, "C+": 2.3, "C": 2, "C-": 1.7, "D+": 1.3, "D": 1, "F": 0, "G": 1 };
+const possibleGrades = { "A": 4, "A-": 3.7, "B+": 3.3, "B": 3, "B-": 2.7, "C+": 2.3, "C": 2, "C-": 1.7, "D+": 1.3, "D": 1, "F": 0,};
 
 const myGrades = [GPAGrade1, GPAGrade2, GPAGrade3];
 const GPAoutput = document.getElementById("GPA");
@@ -75,9 +75,10 @@ function calculateGPA() {
 
       //The part that calculates the GPA
       totalWeight += parseInt(classWeights[x]);
-      GPA += possibleGrades[myGrades[x]] * classWeights[x];
+        GPA += possibleGrades[myGrades[x]] * classWeights[x];
     }
     GPA /= totalWeight;
     GPAoutput.value = GPA.toFixed(2);
+
 }
 
