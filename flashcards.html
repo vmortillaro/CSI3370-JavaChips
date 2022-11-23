@@ -40,10 +40,12 @@
                   <div class="line3"></div>
               </div>
           </nav>
-
-<!--BUILD HERE-->
-
-
+<div class="template" style="margin-top: 70px;
+    display: grid;
+    grid-gap: 2px;
+   grid-template: auto/repeat(auto-fit, minmax(2px, .5fr));
+    padding-left:30vh;">
+<!--left hand side of the UI-->
 <div class = "card">
   <div class "create-flashcard">
     <!--<h2 
@@ -85,9 +87,6 @@
     placeholder="Question";> 
     </textarea>
 
-
-    
-
     <!--The next two blocks are for the textarea for the user to enter answers-->
     <!--This label is for the answer textarea so user know to enter the answer in the space provided
     The positioning and coloring are also in this block-->
@@ -123,8 +122,6 @@
     placeholder="Answer";>
     </textarea>
     </div>
-
-    
 
     <!--This is the code for the button that saves cards when the user is creating a set or adding to one-->
     <button 
@@ -178,183 +175,117 @@
 
 <!--This block if for the actual flashcard it was postion and colored I also ajusted the text inside so it would be larger and wrap so it will all show on the card-->
 <div style="
-width:600px;
-height:400px;
+width:680px;
+height:300px;
 border:1px solid rgb(0, 0, 0);background-color: rgb(255, 255, 255);
 position:absolute;
-top: 250px;
-right: 37%;
+margin-top:20vh;
+margin-left:30vh;
 font-size: 40px;
 padding: 100px 0;
 text-align: center;
 word-wrap:normal;"
+
 id = "flashcardBox";
 >
  </div> 
 
 
- 
-
-<!--The sidebar is coded below and this is where the users sets will be displayed so they can get back to them-->
- <div
- style="
- width:350px;
- border:1px solid rgb(0, 0, 0);
- background-color: rgb(252, 191, 211);
- position:absolute;
- top: 88px;
- right: 0%;
- bottom: 0px;"
- id = "sidebarFlashcard";
- >
- </div>
 
 
 
 
-<!--Below is the button for the user to create new set-->
- <button
- style ="
- background-color: rgba(172, 191, 232, 0.73);
-  border: 2px solid rgb(255, 255, 255);
-  color: palevioletred;
-  cursor: pointer;
- width: 80px;
- height: 55px;
- position: absolute;
- bottom: 50px;
- right: 250px;"
- id = "newSetButton";
- >Create New Set
+
+<!--This button will allow the user to create a new card in a specific set-->
+
+<div class="template" style="
+    display: grid;
+    grid-gap: 2px;
+   grid-template: auto/repeat(auto-fit, minmax(2px, .5fr));
+    padding-left:30vh;">
+<div>    
+<button 
+style = "
+background-color: rgba(172, 191, 232, 0.73);
+    border: 2px solid rgb(255, 255, 255);
+    color: palevioletred;
+    cursor: pointer;
+padding:5px;
+margin-right:none;
+margin-left:none;
+    "id = "newCardInSet";
+    
+> Create new Card in set
 </button>
+</div>
+<!--The button below will allow users to delete the card they are currenly viewing from the set -->
+<div>
+<button 
+style = "
+background-color: rgba(172, 191, 232, 0.73);
+    border: 2px solid rgb(255, 255, 255);
+    color: palevioletred;
+    cursor: pointer;
+padding:5px;
+    "
+id="deleteFlashcard"
+> Delete Card
+</button></div>
 
+</div>
 
-
-<!--This code is for the button that allows the user to delete a set-->
-<button
-style ="
+<!--The block below is for the button that allows the user to edit the curently displayed card-->
+<div style="margin-top:5px;padding-left:30vh;"><button
+style = "
 background-color: rgba(172, 191, 232, 0.73);
 border: 2px solid rgb(255, 255, 255);
 color: palevioletred;
 cursor: pointer;
-width: 80px;
-height: 55px;
-position: absolute;
-bottom:50px;
-right: 1%"
-id = "deleteSetButton";
->Delete Set
-</button>
- 
+padding:5px;
+margin-left:none;
+"
+id = "editButtonFlashcard";
+>Edit Card
+</style></button>
+</div>
 
-<!--This button will allow the user to create a new card in a specific set-->
+
+<div class="template" style="
+    display: grid;
+    grid-gap: 1px;
+    grid-template: auto/repeat(auto-fit, minmax(5px, .5fr));
+    padding-left:30vh;
+margin-top:3px;">
+<!--This button allows the user to get to the next card in the set-->
+<div>
 <button 
 style = "
-background-color: rgba(172, 191, 232, 0.73);
-    border: 2px solid rgb(255, 255, 255);
-    color: palevioletred;
-    cursor: pointer;
-    width: 80px;
-    height: 55px;
-    position: absolute;
-    bottom: 150px;
-    right: 37%;"
-    id = "newCardInSet";
-    
-> Create new Card in set
-</button>
-
-<!--The button below will allow users to delete the card they are currenly viewing from the set -->
-<button 
+  background-color: rgba(172, 191, 232, 0.73);
+  border: 2px solid rgb(255, 255, 255);
+  color: palevioletred;
+  cursor: pointer;
+padding:5px;
+ "
+  id = "nextButtonFlashcard";
+  > Next
+</style> </button></div>
+<!--This code will make a button that will let the user get to the previous button in the set -->
+<span><button 
 style = "
-background-color: rgba(172, 191, 232, 0.73);
-    border: 2px solid rgb(255, 255, 255);
-    color: palevioletred;
-    cursor: pointer;
-    width: 80px;
-    height: 55px;
-    position: absolute;
-    bottom: 150px;
-    left: 30%;"
-id="deleteFlashcard"
-> Delete Card
-</button>
- 
-
+  background-color: rgba(172, 191, 232, 0.73);
+  border: 2px solid rgb(255, 255, 255);
+  color: palevioletred;
+  cursor: pointer;
+padding:5px;
+"
+  id = "previousButtonFlashcard";
+  > Previous
+</style> </button></div>
 </div>
 
 
 
-<!--This button allows the user to get to the next card in the set-->
-<button 
-style = "
-  background-color: rgba(172, 191, 232, 0.73);
-  border: 2px solid rgb(255, 255, 255);
-  color: palevioletred;
-  cursor: pointer;
-  width: 60px;
-  height: 40px;
-  position:absolute;          
-  bottom: 250px;
-  right: 37%;"
-  id = "nextButtonFlashcard";
-  > Next
-</style> </button>
 
-
-
-<!--This code will make a button that will let the user get to the previous button in the set -->
-<button 
-style = "
-  background-color: rgba(172, 191, 232, 0.73);
-  border: 2px solid rgb(255, 255, 255);
-  color: palevioletred;
-  cursor: pointer;
-  width: 60px;
-  height: 40px;
-  position:absolute;          
-  bottom: 250px;
-  left: 30%;"
-  id = "previousButtonFlashcard";
-  > Previous
-</style> </button>
-
-<!--The block below is for the button that allows the user to edit the curently displayed card-->
-<button
-style = "
-background-color: rgba(172, 191, 232, 0.73);
-border: 2px solid rgb(255, 255, 255);
-color: palevioletred;
-cursor: pointer;
-width: 60px;
-height: 40px;
-position: absolute;
-bottom: 250px;
-right: 50%;"
-id = "editButtonFlashcard";
->Edit Card
-</style></button>
-
-
-<!--This is the area that will display the name of the set and also allow users to change the set name
-I set background to be invisable and the text color to black as well as increase font size. The overflow will be hidden so there is no scroll bar in the textarea-->
-<textarea style = "width :500px;
-    height: 65px;
-    min-width: 500px;
-    max-width: 500px;
-    min-height: 65px;
-    max-height: 65px;
-    position: absolute;
-    top: 85px;
-    right: 40%;
-    color: #000;
-    background-color: transparent;
-    border: transparent;
-    font-size: 40px;
-    overflow: hidden;
-    "
-    id="makeNameFlashcard"> 
-  </textarea>
 
 
   <!--This block will be the start screen which is what the user sees when they enter the page or delete their set 
@@ -373,9 +304,171 @@ padding: 80px 0;
  " 
  id = "StartTextFlashcard";
  
- > Click on an old set or make a new one
-
+ > Click on an old set or make a new one</div>
 </div>
+
+
+
+
+
+
+
+
+
+
+<!--The next three blocks of code are for the local storage disclaimer-->
+<!--This will block the page untill the disclaimer is accepted-->
+<div
+style = "
+position: absolute;
+top:88px;
+bottom: 0%;
+left: 0%;
+right: 0%;
+"
+id = "freezeFlashcard";
+>
+</div>
+<!--This block is what contains the words on the disclaimer-->
+<div
+style = "
+height: 100px;
+position: absolute;
+border:1px solid rgb(0, 0, 0);
+background-color: rgba(172, 191, 232, 0.7);
+text-align: center;
+font-size: 20px;
+top: 55%;
+right: 45%;
+"
+id = "disclaimerFlashcard";
+>All changes have been saved to your local storage</div>
+<!--This block is for the button that allows the user to accept the disclaimer-->
+<button
+style = "
+background-color: pink;
+border: 2px solid rgb(255, 255, 255);
+color: palevioletred;
+cursor: pointer;
+height: 50px;
+width: 50px;
+position: absolute;
+text-align: center;
+font-size: 20px;
+top: 60%;
+right: 54%;"
+id = "okDisFlashcard";
+>OK</button>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<!this is the right hand side>
+
+
+<!--The sidebar is coded below and this is where the users sets will be displayed so they can get back to them-->
+ <div
+ style="
+ width:350px;
+ border:1px solid rgb(0, 0, 0);
+ background-color: rgb(252, 191, 211);
+ position:absolute;
+ top: 88px;
+ right: 0%;
+ bottom: 0px;"
+ id = "sidebarFlashcard";
+ >
+ </div>
+<!--Below is the button for the user to create new set-->
+ <button
+ style ="
+ background-color: rgba(172, 191, 232, 0.73);
+  border: 2px solid rgb(255, 255, 255);
+  color: palevioletred;
+  cursor: pointer;
+ width: 80px;
+ height: 55px;
+ position: absolute;
+ bottom: 50px;
+ right: 250px;"
+ id = "newSetButton";
+ >Create New Set
+</button>
+<!--This code is for the button that allows the user to delete a set-->
+<button
+style ="
+background-color: rgba(172, 191, 232, 0.73);
+border: 2px solid rgb(255, 255, 255);
+color: palevioletred;
+cursor: pointer;
+width: 80px;
+height: 55px;
+position: absolute;
+bottom:50px;
+right: 1%"
+id = "deleteSetButton";
+>Delete Set
+</button>
+
+
+<!--This is the area that will display the name of the set and also allow users to change the set name
+I set background to be invisable and the text color to black as well as increase font size. The overflow will be hidden so there is no scroll bar in the textarea-->
+<textarea style = "width :500px;
+    height: 65px;
+    min-width: 500px;
+    max-width: 500px;
+    min-height: 65px;
+    max-height: 65px;
+    position: absolute;
+    top: 85px;
+    right: 40%;
+    color: #000;
+    background-color: transparent;
+    border: transparent;
+    font-size: 40px;
+    "
+    id="makeNameFlashcard"> 
+  </textarea>
 
 
 
@@ -396,56 +489,10 @@ right: 1%;
  id = "deleteAllFlashcard";
 >Delete all</button>
 
-<!--The next three blocks of code are for the local storage disclaimer-->
 
-<!--This will block the page untill the disclaimer is accepted-->
-<div
-style = "
-position: absolute;
-top:88px;
-bottom: 0%;
-left: 0%;
-right: 0%;
-"
-id = "freezeFlashcard";
->
-  
+
+
 </div>
-
-
-<!--This block is what contains the words on the disclaimer-->
-<div
-style = "
-height: 100px;
-position: absolute;
-border:1px solid rgb(0, 0, 0);
-background-color: rgba(172, 191, 232, 0.7);
-text-align: center;
-font-size: 20px;
-top: 55%;
-right: 45%;
-"
-id = "disclaimerFlashcard";
->All changes have been saved to your local storage</div>
-
-<!--This block is for the button that allows the user to accept the disclaimer-->
-<button
-style = "
-background-color: pink;
-border: 2px solid rgb(255, 255, 255);
-color: palevioletred;
-cursor: pointer;
-height: 50px;
-width: 50px;
-position: absolute;
-text-align: center;
-font-size: 20px;
-top: 60%;
-right: 54%;"
-id = "okDisFlashcard";
->OK</button>
-
-
 <!--STOP HERE-->
     </div>
     <script src="projectFlashcards.js"></script>
