@@ -4,6 +4,7 @@
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <link rel="stylesheet" href="style.css">
+    <!-- This is the styling that is exclusive to anything contained within the calculator-->
     <style>
       .calculator {
         font-size: 16pt;
@@ -24,8 +25,7 @@
     <title>Class Grade Calculator</title>
   </head>
   <body>
-      <!-- Here this is setting up the colored pencils photo and the title 
-        for the page. You can begin editing outside of this but be careful -->
+      <!-- Navigation bar and screen background setup -->
       <div class="screenBackground">
         <nav class="navbar">
           <div class="logo">
@@ -60,7 +60,7 @@
 
 
 
-<!-- Insert you code here -->
+<!--this is where the actual calculator code begins-->
 <div class="calculator" >
 <?php
 
@@ -152,7 +152,7 @@ finalscoredisplay;
 
 //add the end of the form and the submit button
 $calculatebutton = <<<calculatebutton
-<input type='submit' value='Update' name='process'>
+<input class="submitTheCriteria" type='submit' value='Update' name='process'>
 </form>
 calculatebutton;
 
