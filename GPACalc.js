@@ -43,7 +43,7 @@ function calculateGPA() {
       }
     }
 
-    for (let i = 1; i < 11; i++) {
+    for (let i = 1; i < 21; i++) {
         doMath(classData, i);
     }
 }
