@@ -249,6 +249,47 @@ const flashCards = () => {
         questionBox.style.display = "none";
         questionLabel.style.display = "none";
         saveEditCard.style.display = "none";
+
+
+
+
+        //NEW???????????????????????????????????????????????
+
+        //document.body.flashcardBox.add(colors);
+        //function pink(){ document.flashCards.style.background = "pink"; }
+
+/*
+        
+  let r = Math.random() * 255 ;
+  let g = Math.random() * 255 ;
+  let b = Math.random() * 255 ;
+  
+  flashcardBox.body.style.backgroundColor = `rgb( ${r}, ${g}, ${b} )`;
+*/
+   //function changeStyle(){
+      let maxVal = 0xFFFFFF; // 16777215
+    let randomNumber = Math.random() * maxVal; 
+    randomNumber = Math.floor(randomNumber);
+    randomNumber = randomNumber.toString(16);
+    let randColor = randomNumber.padStart(6, 0); 
+
+        var element = document.getElementById("flashcardBox");
+
+        element.style.backgroundColor = `#${randColor.toUpperCase()}`;
+    //}
+
+
+
+
+
+
+
+//???????????????????????????????????????????????????????????
+
+
+
+
+
     
         //Thse items are not needed to look at the set of flashcards so they are not displayed
         newInSet.style.display = "block";
