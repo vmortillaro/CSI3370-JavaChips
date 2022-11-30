@@ -4,6 +4,7 @@
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <link rel="stylesheet" href="style.css">
+    
     <title>FlashCards</title>
   </head>
   <body>
@@ -171,7 +172,7 @@
     >Close</button>
     
 
-    <!-- onclick="changeStyle()";-->
+    
     </div>
   </div>
 
@@ -185,7 +186,9 @@
 
 
 <!--This block if for the actual flashcard it was postion and colored I also ajusted the text inside so it would be larger and wrap so it will all show on the card-->
-<div style="
+<link rel="stylesheet" href = "flashcard.css"> <!--This is the css file for the animation-->
+<div 
+style="
 width:680px;
 height:300px;
 border:1px solid rgb(0, 0, 0);
@@ -199,9 +202,11 @@ text-align: center;
 word-wrap:normal;
 
 "
+
 id = "flashcardBox";
 >
- </div> 
+ 
+ </div>
  <!--background-color: generateRandomColor();-->
 
 
@@ -243,10 +248,17 @@ background-color: rgba(172, 191, 232, 0.73);
 padding:5px;
     "
 id="deleteFlashcard"
+
+
 > Delete Card
 </button></div>
 
 </div>
+
+
+}
+
+
 
 <!--The block below is for the button that allows the user to edit the curently displayed card-->
 <div style="margin-top:5px;padding-left:30vh;"><button
