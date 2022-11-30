@@ -28,7 +28,7 @@
                       <a href="./gradecalc.php"> Class Grade Calculator </a>
                   </li>
                   <li class="tabNames">
-                      <a href="./GPACalculator.html"> GPA Calculator </a>
+                      <a href="./GPACalculator.html"> GPA Calculater </a>
                   </li>
                   <li class="tabNames">
                       <a href="./password.html"> Password Generator </a>
@@ -167,28 +167,42 @@
     right: 68%;
     "
     id = "closeButtonFlashcard";
+   
     >Close</button>
     
+
+    <!-- onclick="changeStyle()";-->
     </div>
   </div>
+
+
+
+
+
+
+
+
 
 
 <!--This block if for the actual flashcard it was postion and colored I also ajusted the text inside so it would be larger and wrap so it will all show on the card-->
 <div style="
 width:680px;
 height:300px;
-border:1px solid rgb(0, 0, 0);background-color: rgb(255, 255, 255);
+border:1px solid rgb(0, 0, 0);
+background-color: #ccc;
 position:absolute;
 margin-top:20vh;
 margin-left:30vh;
 font-size: 40px;
 padding: 100px 0;
 text-align: center;
-word-wrap:normal;"
+word-wrap:normal;
 
+"
 id = "flashcardBox";
 >
  </div> 
+ <!--background-color: generateRandomColor();-->
 
 
 
@@ -286,6 +300,8 @@ padding:5px;
 
 
 
+
+
   <!--This block will be the start screen which is what the user sees when they enter the page or delete their set 
   I made the background color is slightly see through and centered the text-->
  <div
@@ -308,15 +324,13 @@ word-wrap:normal;
   <ul style="padding-left:30px">
  <li>If you have already made a set and want to view it select its name listed on the sidebar. </li>
   <li> If you want to create a new set select the create new set button.</li>
- <li>When creating a card you can click save and another card will automatically apperer. Press the close button when your ready to view the set</li>
+ <li>When creating a card you can click save and another card will automatically appear. Press the close button when your ready to view the set</li>
  <li>When viewing a set you are able to edit, delete, and add cards</li>
 <li>All your flashcards will be seved to your local storage so that you can come back later </li>
 </ul>
 <p>Thank you for using JavaChips University</p>
 </div>
 </div>
-
-
 
 
 
@@ -509,5 +523,11 @@ right: 1%;
     </div>
     <script src="projectFlashcards.js"></script>
     <script src="project.js"></script>
+<script>
+ 
+
+  </script>
+
+
   </body>
 </html>
