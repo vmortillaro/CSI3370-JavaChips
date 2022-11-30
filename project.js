@@ -84,3 +84,4 @@ function CopyThePassword(){//when user wants to copy their password
 navigator.clipboard.writeText(passwordDisplay.innerText);//this will pull the passwords value and add it to the users clipboard
 alert('Text copied');//this will let the user know that they have successfully copied their new password
 }
+  
