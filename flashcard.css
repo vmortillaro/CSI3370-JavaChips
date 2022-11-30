@@ -1,0 +1,14 @@
+ #flashcardBox{
+
+ 
+    animation: fly 2s ease-out  ; 
+}
+@keyframes fly {
+    0%{
+        transform:translateX(-200px);
+    }
+    100%{
+        transform:translateX(0px);
+    }
+}
+ 
