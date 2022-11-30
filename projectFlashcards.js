@@ -241,7 +241,7 @@ const flashCards = () => {
     
     //This funtion is called when the user want to review a set of flashcards that has been made
     function closeCreateCard(){
-        //Thses items are need to review the set so they are displayed on screen
+        //Thse items are not needed to look at the set of flashcards so they are not displayed
         closeCard.style.display = "none";
         saveCard.style.display = "none";
         answerBoxCard.style.display = "none";
@@ -253,45 +253,22 @@ const flashCards = () => {
 
 
 
-        //NEW???????????????????????????????????????????????
+    //This block randomizes the color of the flashcards when the function is called
 
-        //document.body.flashcardBox.add(colors);
-        //function pink(){ document.flashCards.style.background = "pink"; }
-
-/*
-        
-  let r = Math.random() * 255 ;
-  let g = Math.random() * 255 ;
-  let b = Math.random() * 255 ;
-  
-  flashcardBox.body.style.backgroundColor = `rgb( ${r}, ${g}, ${b} )`;
-*/
-   //function changeStyle(){
       let maxVal = 0xFFFFFF; // 16777215
     let randomNumber = Math.random() * maxVal; 
     randomNumber = Math.floor(randomNumber);
     randomNumber = randomNumber.toString(16);
     let randColor = randomNumber.padStart(6, 0); 
-
-        var element = document.getElementById("flashcardBox");
-
-        element.style.backgroundColor = `#${randColor.toUpperCase()}`;
-    //}
+        flashcardBox.style.backgroundColor = `#${randColor.toUpperCase()}`;
+   
 
 
 
 
 
 
-
-//???????????????????????????????????????????????????????????
-
-
-
-
-
-    
-        //Thse items are not needed to look at the set of flashcards so they are not displayed
+        //Thses items are need to review the set so they are displayed on screen
         newInSet.style.display = "block";
         flashcardBox.style.display = "block";
         deleteCardButton.style.display = "block";
