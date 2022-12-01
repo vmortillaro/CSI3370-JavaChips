@@ -170,7 +170,7 @@ const flashCards = () => {
     //Event lisioners these call functions when cartian events happen
     newInSet.addEventListener("click", showCreateFlashcard);
     saveCard.addEventListener("click",saveCards);
-    flashcardBox.addEventListener("click", flipCard);
+    flashcardBox.addEventListener("mouseover", flipCard);
     previousButtonFlashcard.addEventListener("click", previousCard);
     
     newSet.addEventListener("click", createANewSet);
@@ -250,11 +250,24 @@ const flashCards = () => {
         questionLabel.style.display = "none";
         saveEditCard.style.display = "none";
 
+       
+            flashcardBox.style.animation = "fly 1s ease-out"; //fly in animation
+         
+        
+
+        //This block resets the animation
+            setTimeout(function(){
+        
+                flashcardBox.style.animation = "hidden";
+
+          flashcardBox.style.animation = "";
+            }, 1000);
 
 
 
+
+        
     //This block randomizes the color of the flashcards when the function is called
-
       let maxVal = 0xFFFFFF; // 16777215
     let randomNumber = Math.random() * maxVal; 
     randomNumber = Math.floor(randomNumber);
@@ -263,9 +276,8 @@ const flashCards = () => {
         flashcardBox.style.backgroundColor = `#${randColor.toUpperCase()}`;
    
 
-
-
-
+       
+        
 
 
         //Thses items are need to review the set so they are displayed on screen
@@ -290,7 +302,7 @@ const flashCards = () => {
     
         currNum = 0; // sets the current card as the first one in the set
         flashcardBox.innerHTML = arrayOfCards[0]; //displays the first question on the flashcard
-        
+       
     }
     
     //function to create a new set of cards 
@@ -364,7 +376,7 @@ const flashCards = () => {
                 currSetNum = tempSetNum; //save the correct array index. Used for deleting cards
     
                 arrayOfCards = setArray[tempSetNum + 1]; //puts only the cards in the current set into an array
-    
+                
                 closeCreateCard();//call function to display the flashcard
                 setName.value = h2SetName.innerHTML;//displays the set name at the top of the screen
     
@@ -519,14 +531,24 @@ const flashCards = () => {
     
     //switch between qustion and answer
     function flipCard(){
+
+       
         if(cardString == arrayOfCards[currNum] ){  //this looks at if the question is currently showing
             cardString = arrayOfCards[currNum + 1];//If the question was showing then change the cardString to the answer
-        flashcardBox.innerHTML = cardString; //show the answer
+            flashcardBox.innerHTML = cardString; //show the answer
+           theElement.className += ' hovered';//flips flashcard
+            flashcardBox.innerHTML = cardString;
         }
         else{ //if the question was not showing then it must have been the aswer
             cardString = arrayOfCards[currNum] //change card string to be the question 
             flashcardBox.innerHTML = cardString; //show the question
+           theElement.className += ' hovered'; //flips flashcard
+            flashcardBox.innerHTML = cardString;
         }
+        
+       
+        
+
     }
     
     

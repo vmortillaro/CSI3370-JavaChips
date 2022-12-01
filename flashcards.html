@@ -184,15 +184,15 @@
 
 
 
-
 <!--This block if for the actual flashcard it was postion and colored I also ajusted the text inside so it would be larger and wrap so it will all show on the card-->
 <link rel="stylesheet" href = "flashcard.css"> <!--This is the css file for the animation-->
 <div 
 style="
 width:680px;
 height:300px;
+
 border:1px solid rgb(0, 0, 0);
-background-color: #ccc;
+background-color: transparent;
 position:absolute;
 margin-top:20vh;
 margin-left:30vh;
@@ -200,14 +200,15 @@ font-size: 40px;
 padding: 100px 0;
 text-align: center;
 word-wrap:normal;
+perspective: 1000px;
+transition: transform .8s;
 
 "
-
 id = "flashcardBox";
 >
- 
+
  </div>
- <!--background-color: generateRandomColor();-->
+ 
 
 
 

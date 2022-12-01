@@ -1,9 +1,5 @@
- #flashcardBox{
-
- 
-    animation: fly 2s ease-out  ; 
-}
-@keyframes fly {
+/*This makes the flashcard fly in*/
+ @keyframes fly {
     0%{
         transform:translateX(-200px);
     }
@@ -11,4 +7,13 @@
         transform:translateX(0px);
     }
 }
+
+
+
+
+/*This block makes the card flip when the mouse hovers over*/
+ #flashcardBox:hover{
+transform: rotateY(360deg);
+
+ }
  
