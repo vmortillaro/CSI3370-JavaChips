@@ -4,50 +4,542 @@
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <link rel="stylesheet" href="style.css">
+    
     <title>FlashCards</title>
   </head>
   <body>
       <!-- Here this is setting up the colored pencils photo and the title 
         for the page. You can begin editing outside of this but be careful -->
       <div class="screenBackground">
-        <nav class="navbar">
-          <div class="logo">
-            <img src="img/Logo (1).jpg" width="80" height="80" />
-          </div>
-          <ul class="navItems">
-            <li class="tabNames">
-              <a href="index.html"> Home </a>
-            </li>
-            <li class="tabNames">
-              <a href="flashcards.html"> FlashCards </a>
-            </li>
-            <li class="tabNames">
-              <a href="toDoListPage.html"> Agenda </a>
-            </li>
-            <li class="tabNames">
-              <a href="classGrade.html"> Class Grade Calculator </a>
-            </li>
-            <li class="tabNames">
-              <a href="GPACalculator.html"> GPA Calculater </a>
-            </li>
-          </ul>
-          <div class="hamburger">
-            <div class="line1"></div>
-            <div class="line2"></div>
-            <div class="line3"></div>
-          </div>
-        </nav>
+          <nav class="navbar">
+              <div class="logo">
+                  <img src="img/Logo (1).jpg" width="80" height="80" />
+              </div>
+              <ul class="navItems">
+                  <li class="tabNames">
+                      <a href="./index.html"> Home </a>
+                  </li>
+                  <li class="tabNames">
+                      <a href="./flashcards.html"> FlashCards </a>
+                  </li>
+                  <li class="tabNames">
+                      <a href="./calendar.html"> Agenda </a>
+                  </li>
+                  <li class="tabNames">
+                      <a href="./gradecalc.php"> Class Grade Calculator </a>
+                  </li>
+                  <li class="tabNames">
+                      <a href="./GPACalculator.html"> GPA Calculater </a>
+                  </li>
+                  <li class="tabNames">
+                      <a href="./password.html"> Password Generator </a>
+                  </li>
+              </ul>
+              <div class="hamburger">
+                  <div class="line1"></div>
+                  <div class="line2"></div>
+                  <div class="line3"></div>
+              </div>
+          </nav>
+<div class="template" style="margin-top: 70px;
+    display: grid;
+    grid-gap: 2px;
+   grid-template: auto/repeat(auto-fit, minmax(2px, .5fr));
+    padding-left:30vh;">
+<!--left hand side of the UI-->
+<div class = "card">
+  <div class "create-flashcard">
+    <!--<h2 
+    style = "text-align: center;"
+    >Create flashcard</h2>
+    -->
+    
+    <!--The next two blocks of code are for the the textare for the user to enter a question-->
+    <!--This is the label so user know which box is for the question-->
+    <label for="question" 
+    style="position: absolute;
+    outline: #000;
+    color: rgb(255, 255, 255);
+    top:150px;
+    right:72%;
+    height: 300;
+    "
+    id = "questionLabelFlashcard";
+    >Question</label>
+    
+  <!--This is the textarea where the user actually types the question there is 
+    placeholder text so the user knows what to type inside it is a light text that disappears when the user starts typeing
+    The placemant and look of the text area is also set up.
+    The text inside was also made larger so it is easier to see -->
+    <textarea style = "width:500px;
+    height: 500px;
+    min-width: 500px;
+    max-width: 500px;
+    min-height: 300px;
+    max-height: 300px;
+    position: absolute;
+    top: 150px;
+    right: 45%;
+    font-size: 40px;
+    text-align: center;
+    padding: 80px 0;
+    "
+    id="questionFlashcard"
+    placeholder="Question";> 
+    </textarea>
 
+    <!--The next two blocks are for the textarea for the user to enter answers-->
+    <!--This label is for the answer textarea so user know to enter the answer in the space provided
+    The positioning and coloring are also in this block-->
+    <label for="answer"
+    style="position: absolute;
+    color: rgb(0, 0, 0);
+    top:470px;
+    right:72%;
+    height: 300;
+    color: rgb(0, 0, 0);"
+    id = "answerLabelFlashcard";
+    >Answer</label>
+    
+    <!--This is the textarea designed for user to enter the answer side of the flashcard
+    There is placeholder text so it is very clear to the user what the box is for 
+    The postioning and size was also coded below along with the text size-->
+    <textarea
+    style = "width :500px;
+    height: 300px;
+    min-width: 500px;
+    max-width: 500px;
+    min-height: 300px;
+    max-height: 300px;
+    position: absolute;
+    top: 470px;
+    right: 45%;
+    font-size: 40px;
+    text-align: center;
+    padding: 20%;
+    padding: 80px 0;"
 
-
-
-
-
-        
-
-
-
+  id="answerFlashcard";
+    placeholder="Answer";>
+    </textarea>
     </div>
+
+    <!--This is the code for the button that saves cards when the user is creating a set or adding to one-->
+    <button 
+    style = "
+    background-color: rgba(172, 191, 232, 0.73);
+    border: 2px solid rgb(255, 255, 255);
+    color: palevioletred;
+    cursor: pointer;
+    width: 60px;
+    height: 40px;
+    position: absolute;
+    top: 775px;
+    right: 45%;"
+    id = "saveCard";
+    >Save</button>
+
+    <!--This code is for the save button used when the user is editing a prexisting card in a set-->
+    <button
+    style = "
+    background-color: rgba(172, 191, 232, 0.73);
+    border: 2px solid rgb(255, 255, 255);
+    color: palevioletred;
+    cursor: pointer;
+    width: 60px;
+    height: 40px;
+    position: absolute;
+    top: 800px;
+    right: 56.5%;"
+    id = "saveEditCard";
+    >Save</button>
+
+    <!--below is the code for the close button that will allow users to get out of the making card items and start viewing their flashcard set-->
+    <button 
+    style = "
+    background-color: rgba(172, 191, 232, 0.73);
+    border: 2px solid rgb(255, 255, 255);
+    color: palevioletred;
+    cursor: pointer;
+    width: 60px;
+    height: 40px;
+    position: absolute;
+    top: 775px;
+    right: 68%;
+    "
+    id = "closeButtonFlashcard";
+   
+    >Close</button>
+    
+
+    
+    </div>
+  </div>
+
+
+
+
+
+
+
+
+
+
+<!--This block if for the actual flashcard it was postion and colored I also ajusted the text inside so it would be larger and wrap so it will all show on the card-->
+<link rel="stylesheet" href = "flashcard.css"> <!--This is the css file for the animation-->
+<div 
+style="
+width:680px;
+height:300px;
+border:1px solid rgb(0, 0, 0);
+background-color: #ccc;
+position:absolute;
+margin-top:20vh;
+margin-left:30vh;
+font-size: 40px;
+padding: 100px 0;
+text-align: center;
+word-wrap:normal;
+
+"
+
+id = "flashcardBox";
+>
+ 
+ </div>
+ <!--background-color: generateRandomColor();-->
+
+
+
+
+
+
+
+<!--This button will allow the user to create a new card in a specific set-->
+
+<div class="template" style="
+    display: grid;
+    grid-gap: 2px;
+   grid-template: auto/repeat(auto-fit, minmax(2px, .5fr));
+    padding-left:30vh;">
+<div>    
+<button 
+style = "
+background-color: rgba(172, 191, 232, 0.73);
+    border: 2px solid rgb(255, 255, 255);
+    color: palevioletred;
+    cursor: pointer;
+padding:5px;
+margin-right:none;
+margin-left:none;
+    "id = "newCardInSet";
+    
+> Create new Card in set
+</button>
+</div>
+<!--The button below will allow users to delete the card they are currenly viewing from the set -->
+<div>
+<button 
+style = "
+background-color: rgba(172, 191, 232, 0.73);
+    border: 2px solid rgb(255, 255, 255);
+    color: palevioletred;
+    cursor: pointer;
+padding:5px;
+    "
+id="deleteFlashcard"
+
+
+> Delete Card
+</button></div>
+
+</div>
+
+
+}
+
+
+
+<!--The block below is for the button that allows the user to edit the curently displayed card-->
+<div style="margin-top:5px;padding-left:30vh;"><button
+style = "
+background-color: rgba(172, 191, 232, 0.73);
+border: 2px solid rgb(255, 255, 255);
+color: palevioletred;
+cursor: pointer;
+padding:5px;
+margin-left:none;
+"
+id = "editButtonFlashcard";
+>Edit Card
+</style></button>
+</div>
+
+
+<div class="template" style="
+    display: grid;
+    grid-gap: 1px;
+    grid-template: auto/repeat(auto-fit, minmax(5px, .5fr));
+    padding-left:30vh;
+margin-top:3px;">
+<!--This button allows the user to get to the next card in the set-->
+<div>
+<button 
+style = "
+  background-color: rgba(172, 191, 232, 0.73);
+  border: 2px solid rgb(255, 255, 255);
+  color: palevioletred;
+  cursor: pointer;
+padding:5px;
+ "
+  id = "nextButtonFlashcard";
+  > Next
+</style> </button></div>
+<!--This code will make a button that will let the user get to the previous button in the set -->
+<span><button 
+style = "
+  background-color: rgba(172, 191, 232, 0.73);
+  border: 2px solid rgb(255, 255, 255);
+  color: palevioletred;
+  cursor: pointer;
+padding:5px;
+"
+  id = "previousButtonFlashcard";
+  > Previous
+</style> </button></div>
+</div>
+
+
+
+
+
+
+  <!--This block will be the start screen which is what the user sees when they enter the page or delete their set 
+  I made the background color is slightly see through and centered the text-->
+ <div
+ style = 
+ "width: 870px;
+ height: 230px;
+ position: absolute;
+ top: 40%;
+ right: 30%;
+ background-color: rgba(172, 191, 232, 0.7);
+ font-size:20px;
+
+padding: 20px;
+word-wrap:normal;
+ " 
+ id = "StartTextFlashcard";
+ 
+ ><p>Hello! Welcome to your flashcards!  </p> 
+
+  <ul style="padding-left:30px">
+ <li>If you have already made a set and want to view it select its name listed on the sidebar. </li>
+  <li> If you want to create a new set select the create new set button.</li>
+ <li>When creating a card you can click save and another card will automatically appear. Press the close button when your ready to view the set</li>
+ <li>When viewing a set you are able to edit, delete, and add cards</li>
+<li>All your flashcards will be seved to your local storage so that you can come back later </li>
+</ul>
+<p>Thank you for using JavaChips University</p>
+</div>
+</div>
+
+
+
+
+
+
+
+
+
+
+<!--The next three blocks of code are for the local storage disclaimer-->
+<!--This will block the page untill the disclaimer is accepted-->
+<div
+style = "
+position: absolute;
+top:88px;
+bottom: 0%;
+left: 0%;
+right: 0%;
+"
+id = "freezeFlashcard";
+>
+</div>
+<!--This block is what contains the words on the disclaimer-->
+<div
+style = "
+height: 100px;
+position: absolute;
+border:1px solid rgb(0, 0, 0);
+background-color: rgba(172, 191, 232, 0.7);
+text-align: center;
+font-size: 20px;
+top: 55%;
+right: 45%;
+"
+id = "disclaimerFlashcard";
+>All changes have been saved to your local storage</div>
+<!--This block is for the button that allows the user to accept the disclaimer-->
+<button
+style = "
+background-color: pink;
+border: 2px solid rgb(255, 255, 255);
+color: palevioletred;
+cursor: pointer;
+height: 50px;
+width: 50px;
+position: absolute;
+text-align: center;
+font-size: 20px;
+top: 60%;
+right: 54%;"
+id = "okDisFlashcard";
+>OK</button>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<!this is the right hand side>
+
+
+<!--The sidebar is coded below and this is where the users sets will be displayed so they can get back to them-->
+ <div
+ style="
+ width:350px;
+ border:1px solid rgb(0, 0, 0);
+ background-color: rgb(252, 191, 211);
+ position:absolute;
+ top: 88px;
+ right: 0%;
+ bottom: 0px;"
+ id = "sidebarFlashcard";
+ >
+ </div>
+<!--Below is the button for the user to create new set-->
+ <button
+ style ="
+ background-color: rgba(172, 191, 232, 0.73);
+  border: 2px solid rgb(255, 255, 255);
+  color: palevioletred;
+  cursor: pointer;
+ width: 80px;
+ height: 55px;
+ position: absolute;
+ bottom: 50px;
+ right: 250px;"
+ id = "newSetButton";
+ >Create New Set
+</button>
+<!--This code is for the button that allows the user to delete a set-->
+<button
+style ="
+background-color: rgba(172, 191, 232, 0.73);
+border: 2px solid rgb(255, 255, 255);
+color: palevioletred;
+cursor: pointer;
+width: 80px;
+height: 55px;
+position: absolute;
+bottom:50px;
+right: 1%"
+id = "deleteSetButton";
+>Delete Set
+</button>
+
+
+<!--This is the area that will display the name of the set and also allow users to change the set name
+I set background to be invisable and the text color to black as well as increase font size. The overflow will be hidden so there is no scroll bar in the textarea-->
+<textarea style = "width :500px;
+    height: 65px;
+    min-width: 500px;
+    max-width: 500px;
+    min-height: 65px;
+    max-height: 65px;
+    position: absolute;
+    top: 80px;
+    right: 40%;
+    color: #000;
+    background-color: transparent;
+    border: transparent;
+    font-size: 40px;
+    overflow: hidden;
+    "
+    id="makeNameFlashcard"> 
+  </textarea>
+
+
+
+
+<!--This button was made to allow user to remove all saved flashcards from local storage-->
+<button
+style =
+"background-color: rgba(172, 191, 232, 0.73);
+border: 2px solid rgb(255, 255, 255);
+color: palevioletred;
+cursor: pointer;
+width: 80px;
+height: 55px;
+position: absolute;
+top: 100px;
+right: 1%;
+ "
+ id = "deleteAllFlashcard";
+>Delete all</button>
+
+
+
+
+</div>
+<!--STOP HERE-->
+    </div>
+    <script src="projectFlashcards.js"></script>
     <script src="project.js"></script>
+<script>
+ 
+
+  </script>
+
+
   </body>
 </html>

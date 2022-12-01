@@ -1,39 +1,37 @@
 <!doctype html>
-
 <html lang="en">
-
-
 <head>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <link rel="stylesheet" href="style.css">
-    <title>FlashCards</title>
+    <title>Class Grade Calculator</title>
 </head>
 <body>
-
     <!-- Here this is setting up the colored pencils photo and the title
       for the page. You can begin editing outside of this but be careful -->
     <div class="screenBackground">
         <nav class="navbar">
-
             <div class="logo">
                 <img src="img/Logo (1).jpg" width="80" height="80" />
             </div>
             <ul class="navItems">
                 <li class="tabNames">
-                    <a href="index.html"> Home </a>
+                    <a href="./index.html"> Home </a>
                 </li>
                 <li class="tabNames">
-                    <a href="flashcards.html"> FlashCards </a>
+                    <a href="./flashcards.html"> FlashCards </a>
                 </li>
                 <li class="tabNames">
-                    <a href="toDoListPage.html"> Agenda </a>
+                    <a href="./calendar.html"> Agenda </a>
                 </li>
                 <li class="tabNames">
-                    <a href="classGrade.html"> Class Grade Calculator </a>
+                    <a href="./gradecalc.php"> Class Grade Calculator </a>
                 </li>
                 <li class="tabNames">
-                    <a href="GPACalculator.html"> GPA Calculater </a>
+                    <a href="./GPACalculator.html"> GPA Calculator </a>
+                </li>
+                <li class="tabNames">
+                    <a href="./password.html"> Password Generator </a>
                 </li>
             </ul>
             <div class="hamburger">
@@ -42,133 +40,651 @@
                 <div class="line3"></div>
             </div>
         </nav>
-        <div style=""
-             id="sidebar" ;>
+<!--userFillPass is important because it is formatting all the content in one box. Just so all the elements stay within the desired box then thats why I do that-->
+        <div class="userFillPass">
+            <!--this div is being used to provide directiosn to the user. To ensure the UI is being properly used: Added by Val H-->
+            <div style="background-color:rgb(233, 178, 187,0.80); padding: 10px; border-radius: 10%;">
+                <p>Hello! Welcome to the GPA Calculator! Go ahead and enter any name for your class.</p>
+                <p>From there please enter an Upper Case Letter from the following options corresponding to the table below: A, B, C, D, F </p>
+                <p>From there add the number of credits that this class is worth. For Example: 4, 3, 2, 1</p>
+                <p>if you so choose you can have different Semesters aswell, once those are selected they will be calculated individually</p>
+                <p>Enter the amount of criteria as desired then scroll down and press submit. Once you press submit your GPA will appear in the box below the button</p>
+                <p>From there you're done! Thank you for using JavaChips University</p>
+            </div>
+            <!--this is the conversion table that the user will check this-->
+            <img src="img/conv.png" alt="Conversion" style="padding-bottom: 20px;padding-top:10px; width:1000px;">
+            <!--Style for the table to fix its position and change its width, transfrom it, amd give it an id -->
+
+            <table id="GPAtable">
+
+                <tr style="background-color:rgb(233, 178, 187);width: 10px;">
+                    <!-- Titles for the table as well as a width-->
+                    <th>Grade Name</th>
+                    <th>Grade</th>
+                    <th>Credits</th>
+                    <th>Semester</th>
+                    <th>Semester Grades</th>
+                </tr>
+                <!--20 Field rows added with 3 columns adding upt to 60 fields-->
+                <tr style="">
+                    <!--Name you want added, doesnt affect calculations, just for show-->
+                    <td><input type="text" name="name1" id="GPAName1" placeholder="Enter Name:" /></td>
+                    <!--field for the letter Grade you want added, gets put into calculations-->
+                    <td><input type="text" name="Grade1" id="GPAGrade1" value="" /></td>
+                    <!--field for the credit of the class, gets added to the later calculations-->
+                    <td><input type="text" name="Credit1" id="GPACredit1" value="" /></td>
+                    <td>
+                        <SELECT id="Semester1">
+                            <OPTION Value="1">Semester 1</OPTION>
+                            <OPTION Value="2">Semester 2</OPTION>
+                            <OPTION Value="3">Semester 3</OPTION>
+                            <OPTION Value="4">Semester 4</OPTION>
+                            <OPTION Value="5">Semester 5</OPTION>
+                            <OPTION Value="6">Semester 6</OPTION>
+                            <OPTION Value="7">Semester 7</OPTION>
+                            <OPTION Value="8">Semester 8</OPTION>
+                            <OPTION Value="9">Semester 9</OPTION>
+                            <OPTION Value="10">Semester 10</OPTION>
+                            <OPTION Value="11">Semester 11</OPTION>
+                            <OPTION Value="12">Semester 12</OPTION>
+                            <OPTION Value="13">Semester 13</OPTION>
+                            <OPTION Value="14">Semester 14</OPTION>
+                            <OPTION Value="15">Semester 15</OPTION>
+                            <OPTION Value="16">Semester 16</OPTION>
+                            <OPTION Value="17">Semester 17</OPTION>
+                            <OPTION Value="18">Semester 18</OPTION>
+                            <OPTION Value="19">Semester 19</OPTION>
+                            <OPTION Value="20">Semester 20</OPTION>
+                        </SELECT>
+                    </td>
+                    <td>Semester 01:  <input type="text" id="GPAResult1"></td>
+                    
+                </tr>
+                <!--the previously described fields get added a total of 20 times to account for as many classes as the user wants added-->
+                <tr>
+                    <td><input type="text" name="name2" id="GPAName2" placeholder="Enter Name:" /></td>
+                    <td><input type="text" name="Grade2" id="GPAGrade2" value="" /></td>
+                    <td><input type="text" name="Credit2" id="GPACredit2" value="" /></td>
+                    <td>
+                        <SELECT id="Semester2">
+                            <OPTION Value="1">Semester 1</OPTION>
+                            <OPTION Value="2">Semester 2</OPTION>
+                            <OPTION Value="3">Semester 3</OPTION>
+                            <OPTION Value="4">Semester 4</OPTION>
+                            <OPTION Value="5">Semester 5</OPTION>
+                            <OPTION Value="6">Semester 6</OPTION>
+                            <OPTION Value="7">Semester 7</OPTION>
+                            <OPTION Value="8">Semester 8</OPTION>
+                            <OPTION Value="9">Semester 9</OPTION>
+                            <OPTION Value="10">Semester 10</OPTION>
+                            <OPTION Value="11">Semester 11</OPTION>
+                            <OPTION Value="12">Semester 12</OPTION>
+                            <OPTION Value="13">Semester 13</OPTION>
+                            <OPTION Value="14">Semester 14</OPTION>
+                            <OPTION Value="15">Semester 15</OPTION>
+                            <OPTION Value="16">Semester 16</OPTION>
+                            <OPTION Value="17">Semester 17</OPTION>
+                            <OPTION Value="18">Semester 18</OPTION>
+                            <OPTION Value="19">Semester 19</OPTION>
+                            <OPTION Value="20">Semester 20</OPTION>
+                        </SELECT>
+                    </td>
+                    <td>Semester 02:  <input type="text" id="GPAResult2"></td>
+                </tr>
+                <tr>
+                    <td><input type="text" name="name3" id="GPAName3" placeholder="Enter Name:" /></td>
+                    <td><input type="text" name="Grade3" id="GPAGrade3" value="" /></td>
+                    <td><input type="text" name="Credit3" id="GPACredit3" value="" /></td>
+                    <td>
+                        <SELECT id="Semester3">
+                            <OPTION Value="1">Semester 1</OPTION>
+                            <OPTION Value="2">Semester 2</OPTION>
+                            <OPTION Value="3">Semester 3</OPTION>
+                            <OPTION Value="4">Semester 4</OPTION>
+                            <OPTION Value="5">Semester 5</OPTION>
+                            <OPTION Value="6">Semester 6</OPTION>
+                            <OPTION Value="7">Semester 7</OPTION>
+                            <OPTION Value="8">Semester 8</OPTION>
+                            <OPTION Value="9">Semester 9</OPTION>
+                            <OPTION Value="10">Semester 10</OPTION>
+                            <OPTION Value="11">Semester 11</OPTION>
+                            <OPTION Value="12">Semester 12</OPTION>
+                            <OPTION Value="13">Semester 13</OPTION>
+                            <OPTION Value="14">Semester 14</OPTION>
+                            <OPTION Value="15">Semester 15</OPTION>
+                            <OPTION Value="16">Semester 16</OPTION>
+                            <OPTION Value="17">Semester 17</OPTION>
+                            <OPTION Value="18">Semester 18</OPTION>
+                            <OPTION Value="19">Semester 19</OPTION>
+                            <OPTION Value="20">Semester 20</OPTION>
+                        </SELECT>
+                    </td>
+                    <td>Semester 03: <input type="text" id="GPAResult3"></td>
+                </tr>
+                <tr>
+                    <td><input type="text" name="name4" id="GPAName4" placeholder="Enter Name:" /></td>
+                    <td><input type="text" name="Grade4" id="GPAGrade4" value="" /></td>
+                    <td><input type="text" name="Credit4" id="GPACredit4" value="" /></td>
+                    <td>
+                        <SELECT id="Semester4">
+                            <OPTION Value="1">Semester 1</OPTION>
+                            <OPTION Value="2">Semester 2</OPTION>
+                            <OPTION Value="3">Semester 3</OPTION>
+                            <OPTION Value="4">Semester 4</OPTION>
+                            <OPTION Value="5">Semester 5</OPTION>
+                            <OPTION Value="6">Semester 6</OPTION>
+                            <OPTION Value="7">Semester 7</OPTION>
+                            <OPTION Value="8">Semester 8</OPTION>
+                            <OPTION Value="9">Semester 9</OPTION>
+                            <OPTION Value="10">Semester 10</OPTION>
+                            <OPTION Value="11">Semester 11</OPTION>
+                            <OPTION Value="12">Semester 12</OPTION>
+                            <OPTION Value="13">Semester 13</OPTION>
+                            <OPTION Value="14">Semester 14</OPTION>
+                            <OPTION Value="15">Semester 15</OPTION>
+                            <OPTION Value="16">Semester 16</OPTION>
+                            <OPTION Value="17">Semester 17</OPTION>
+                            <OPTION Value="18">Semester 18</OPTION>
+                            <OPTION Value="19">Semester 19</OPTION>
+                            <OPTION Value="20">Semester 20</OPTION>
+                        </SELECT>
+                    </td>
+                    <td>Semester 04: <input type="text" id="GPAResult4"></td>
+                </tr>
+                <tr>
+                    <td><input type="text" name="name5" id="GPAName5" placeholder="Enter Name:" /></td>
+                    <td><input type="text" name="Grade5" id="GPAGrade5" value="" /></td>
+                    <td><input type="text" name="Credit5" id="GPACredit5" value="" /></td>
+                    <td>
+                        <SELECT id="Semester5">
+                            <OPTION Value="1">Semester 1</OPTION>
+                            <OPTION Value="2">Semester 2</OPTION>
+                            <OPTION Value="3">Semester 3</OPTION>
+                            <OPTION Value="4">Semester 4</OPTION>
+                            <OPTION Value="5">Semester 5</OPTION>
+                            <OPTION Value="6">Semester 6</OPTION>
+                            <OPTION Value="7">Semester 7</OPTION>
+                            <OPTION Value="8">Semester 8</OPTION>
+                            <OPTION Value="9">Semester 9</OPTION>
+                            <OPTION Value="10">Semester 10</OPTION>
+                            <OPTION Value="11">Semester 11</OPTION>
+                            <OPTION Value="12">Semester 12</OPTION>
+                            <OPTION Value="13">Semester 13</OPTION>
+                            <OPTION Value="14">Semester 14</OPTION>
+                            <OPTION Value="15">Semester 15</OPTION>
+                            <OPTION Value="16">Semester 16</OPTION>
+                            <OPTION Value="17">Semester 17</OPTION>
+                            <OPTION Value="18">Semester 18</OPTION>
+                            <OPTION Value="19">Semester 19</OPTION>
+                            <OPTION Value="20">Semester 20</OPTION>
+                        </SELECT>
+                    </td>
+                    <td>Semester 05: <input type="text" id="GPAResult5"></td>
+                </tr>
+                <tr>
+                    <td><input type="text" name="name6" id="GPAName6" placeholder="Enter Name:" /></td>
+                    <td><input type="text" name="Grade6" id="GPAGrade6" value="" /></td>
+                    <td><input type="text" name="Credit6" id="GPACredit6" value="" /></td>
+                    <td>
+                        <SELECT id="Semester6">
+                            <OPTION Value="1">Semester 1</OPTION>
+                            <OPTION Value="2">Semester 2</OPTION>
+                            <OPTION Value="3">Semester 3</OPTION>
+                            <OPTION Value="4">Semester 4</OPTION>
+                            <OPTION Value="5">Semester 5</OPTION>
+                            <OPTION Value="6">Semester 6</OPTION>
+                            <OPTION Value="7">Semester 7</OPTION>
+                            <OPTION Value="8">Semester 8</OPTION>
+                            <OPTION Value="9">Semester 9</OPTION>
+                            <OPTION Value="10">Semester 10</OPTION>
+                            <OPTION Value="11">Semester 11</OPTION>
+                            <OPTION Value="12">Semester 12</OPTION>
+                            <OPTION Value="13">Semester 13</OPTION>
+                            <OPTION Value="14">Semester 14</OPTION>
+                            <OPTION Value="15">Semester 15</OPTION>
+                            <OPTION Value="16">Semester 16</OPTION>
+                            <OPTION Value="17">Semester 17</OPTION>
+                            <OPTION Value="18">Semester 18</OPTION>
+                            <OPTION Value="19">Semester 19</OPTION>
+                            <OPTION Value="20">Semester 20</OPTION>
+                        </SELECT>
+                    </td>
+                    <td>Semester 06: <input type="text" id="GPAResult6"></td>
+                </tr>
+                <tr>
+                    <td><input type="text" name="name7" id="GPAName7" placeholder="Enter Name:" /></td>
+                    <td><input type="text" name="Grade7" id="GPAGrade7" value="" /></td>
+                    <td><input type="text" name="Credit7" id="GPACredit7" value="" /></td>
+                    <td>
+                        <SELECT id="Semester7">
+                            <OPTION Value="1">Semester 1</OPTION>
+                            <OPTION Value="2">Semester 2</OPTION>
+                            <OPTION Value="3">Semester 3</OPTION>
+                            <OPTION Value="4">Semester 4</OPTION>
+                            <OPTION Value="5">Semester 5</OPTION>
+                            <OPTION Value="6">Semester 6</OPTION>
+                            <OPTION Value="7">Semester 7</OPTION>
+                            <OPTION Value="8">Semester 8</OPTION>
+                            <OPTION Value="9">Semester 9</OPTION>
+                            <OPTION Value="10">Semester 10</OPTION>
+                            <OPTION Value="11">Semester 11</OPTION>
+                            <OPTION Value="12">Semester 12</OPTION>
+                            <OPTION Value="13">Semester 13</OPTION>
+                            <OPTION Value="14">Semester 14</OPTION>
+                            <OPTION Value="15">Semester 15</OPTION>
+                            <OPTION Value="16">Semester 16</OPTION>
+                            <OPTION Value="17">Semester 17</OPTION>
+                            <OPTION Value="18">Semester 18</OPTION>
+                            <OPTION Value="19">Semester 19</OPTION>
+                            <OPTION Value="20">Semester 20</OPTION>
+                        </SELECT>
+                    </td>
+                    <td>Semester 07: <input type="text" id="GPAResult7"></td>
+                </tr>
+                <tr>
+                    <td><input type="text" name="name8" id="GPAName8" placeholder="Enter Name:" /></td>
+                    <td><input type="text" name="Grade8" id="GPAGrade8" value="" /></td>
+                    <td><input type="text" name="Credit8" id="GPACredit8" value="" /></td>
+                    <td>
+                        <SELECT id="Semester8">
+                            <OPTION Value="1">Semester 1</OPTION>
+                            <OPTION Value="2">Semester 2</OPTION>
+                            <OPTION Value="3">Semester 3</OPTION>
+                            <OPTION Value="4">Semester 4</OPTION>
+                            <OPTION Value="5">Semester 5</OPTION>
+                            <OPTION Value="6">Semester 6</OPTION>
+                            <OPTION Value="7">Semester 7</OPTION>
+                            <OPTION Value="8">Semester 8</OPTION>
+                            <OPTION Value="9">Semester 9</OPTION>
+                            <OPTION Value="10">Semester 10</OPTION>
+                            <OPTION Value="11">Semester 11</OPTION>
+                            <OPTION Value="12">Semester 12</OPTION>
+                            <OPTION Value="13">Semester 13</OPTION>
+                            <OPTION Value="14">Semester 14</OPTION>
+                            <OPTION Value="15">Semester 15</OPTION>
+                            <OPTION Value="16">Semester 16</OPTION>
+                            <OPTION Value="17">Semester 17</OPTION>
+                            <OPTION Value="18">Semester 18</OPTION>
+                            <OPTION Value="19">Semester 19</OPTION>
+                            <OPTION Value="20">Semester 20</OPTION>
+                        </SELECT>
+                    </td>
+                    <td>Semester 08: <input type="text" id="GPAResult8"></td>
+                </tr>
+                <tr>
+                    <td><input type="text" name="name9" id="GPAName9" placeholder="Enter Name:" /></td>
+                    <td><input type="text" name="Grade9" id="GPAGrade9" value="" /></td>
+                    <td><input type="text" name="Credit9" id="GPACredit9" value="" /></td>
+                    <td>
+                        <SELECT id="Semester9">
+                            <OPTION Value="1">Semester 1</OPTION>
+                            <OPTION Value="2">Semester 2</OPTION>
+                            <OPTION Value="3">Semester 3</OPTION>
+                            <OPTION Value="4">Semester 4</OPTION>
+                            <OPTION Value="5">Semester 5</OPTION>
+                            <OPTION Value="6">Semester 6</OPTION>
+                            <OPTION Value="7">Semester 7</OPTION>
+                            <OPTION Value="8">Semester 8</OPTION>
+                            <OPTION Value="9">Semester 9</OPTION>
+                            <OPTION Value="10">Semester 10</OPTION>
+                            <OPTION Value="11">Semester 11</OPTION>
+                            <OPTION Value="12">Semester 12</OPTION>
+                            <OPTION Value="13">Semester 13</OPTION>
+                            <OPTION Value="14">Semester 14</OPTION>
+                            <OPTION Value="15">Semester 15</OPTION>
+                            <OPTION Value="16">Semester 16</OPTION>
+                            <OPTION Value="17">Semester 17</OPTION>
+                            <OPTION Value="18">Semester 18</OPTION>
+                            <OPTION Value="19">Semester 19</OPTION>
+                            <OPTION Value="20">Semester 20</OPTION>
+                        </SELECT>
+                    </td>
+                    <td>Semester 09:   <input type="text" id="GPAResult9"></td>
+                </tr>
+                <tr>
+                    <td><input type="text" name="name10" id="GPAName10" placeholder="Enter Name:" /></td>
+                    <td><input type="text" name="Grade10" id="GPAGrade10" value="" /></td>
+                    <td><input type="text" name="Credit10" id="GPACredit10" value="" /></td>
+                    <td>
+                        <SELECT id="Semester10">
+                            <OPTION Value="1">Semester 1</OPTION>
+                            <OPTION Value="2">Semester 2</OPTION>
+                            <OPTION Value="3">Semester 3</OPTION>
+                            <OPTION Value="4">Semester 4</OPTION>
+                            <OPTION Value="5">Semester 5</OPTION>
+                            <OPTION Value="6">Semester 6</OPTION>
+                            <OPTION Value="7">Semester 7</OPTION>
+                            <OPTION Value="8">Semester 8</OPTION>
+                            <OPTION Value="9">Semester 9</OPTION>
+                            <OPTION Value="10">Semester 10</OPTION>
+                            <OPTION Value="11">Semester 11</OPTION>
+                            <OPTION Value="12">Semester 12</OPTION>
+                            <OPTION Value="13">Semester 13</OPTION>
+                            <OPTION Value="14">Semester 14</OPTION>
+                            <OPTION Value="15">Semester 15</OPTION>
+                            <OPTION Value="16">Semester 16</OPTION>
+                            <OPTION Value="17">Semester 17</OPTION>
+                            <OPTION Value="18">Semester 18</OPTION>
+                            <OPTION Value="19">Semester 19</OPTION>
+                            <OPTION Value="20">Semester 20</OPTION>
+                        </SELECT>
+                    </td>
+                    <td>Semester 10: <input type="text" id="GPAResult10"></td>
+                </tr>
+                <tr>
+                    <td><input type="text" name="name11" id="GPAName11" placeholder="Enter Name:" /></td>
+                    <td><input type="text" name="Grade11" id="GPAGrade11" value="" /></td>
+                    <td><input type="text" name="Credit11" id="GPACredit11" value="" /></td>
+                    <td>
+                        <SELECT id="Semester11">
+                            <OPTION Value="1">Semester 1</OPTION>
+                            <OPTION Value="2">Semester 2</OPTION>
+                            <OPTION Value="3">Semester 3</OPTION>
+                            <OPTION Value="4">Semester 4</OPTION>
+                            <OPTION Value="5">Semester 5</OPTION>
+                            <OPTION Value="6">Semester 6</OPTION>
+                            <OPTION Value="7">Semester 7</OPTION>
+                            <OPTION Value="8">Semester 8</OPTION>
+                            <OPTION Value="9">Semester 9</OPTION>
+                            <OPTION Value="10">Semester 10</OPTION>
+                            <OPTION Value="11">Semester 11</OPTION>
+                            <OPTION Value="12">Semester 12</OPTION>
+                            <OPTION Value="13">Semester 13</OPTION>
+                            <OPTION Value="14">Semester 14</OPTION>
+                            <OPTION Value="15">Semester 15</OPTION>
+                            <OPTION Value="16">Semester 16</OPTION>
+                            <OPTION Value="17">Semester 17</OPTION>
+                            <OPTION Value="18">Semester 18</OPTION>
+                            <OPTION Value="19">Semester 19</OPTION>
+                            <OPTION Value="20">Semester 20</OPTION>
+                        </SELECT>
+                    </td>
+                    <td>Semester 11: <input type="text" id="GPAResult11"></td>
+                </tr>
+                <tr>
+                    <td><input type="text" name="name12" id="GPAName12" placeholder="Enter Name:" /></td>
+                    <td><input type="text" name="Grade12" id="GPAGrade12" value="" /></td>
+                    <td><input type="text" name="Credit12" id="GPACredit12" value="" /></td>
+                    <td>
+                        <SELECT id="Semester12">
+                            <OPTION Value="1">Semester 1</OPTION>
+                            <OPTION Value="2">Semester 2</OPTION>
+                            <OPTION Value="3">Semester 3</OPTION>
+                            <OPTION Value="4">Semester 4</OPTION>
+                            <OPTION Value="5">Semester 5</OPTION>
+                            <OPTION Value="6">Semester 6</OPTION>
+                            <OPTION Value="7">Semester 7</OPTION>
+                            <OPTION Value="8">Semester 8</OPTION>
+                            <OPTION Value="9">Semester 9</OPTION>
+                            <OPTION Value="10">Semester 10</OPTION>
+                            <OPTION Value="11">Semester 11</OPTION>
+                            <OPTION Value="12">Semester 12</OPTION>
+                            <OPTION Value="13">Semester 13</OPTION>
+                            <OPTION Value="14">Semester 14</OPTION>
+                            <OPTION Value="15">Semester 15</OPTION>
+                            <OPTION Value="16">Semester 16</OPTION>
+                            <OPTION Value="17">Semester 17</OPTION>
+                            <OPTION Value="18">Semester 18</OPTION>
+                            <OPTION Value="19">Semester 19</OPTION>
+                            <OPTION Value="20">Semester 20</OPTION>
+                        </SELECT>
+                    </td>
+                    <td>Semester 12: <input type="text" id="GPAResult12"></td>
+                </tr>
+                <tr>
+                    <td><input type="text" name="name13" id="GPAName13" placeholder="Enter Name:" /></td>
+                    <td><input type="text" name="Grade13" id="GPAGrade13" value="" /></td>
+                    <td><input type="text" name="Credit13" id="GPACredit13" value="" /></td>
+                    <td>
+                        <SELECT id="Semester13">
+                            <OPTION Value="1">Semester 1</OPTION>
+                            <OPTION Value="2">Semester 2</OPTION>
+                            <OPTION Value="3">Semester 3</OPTION>
+                            <OPTION Value="4">Semester 4</OPTION>
+                            <OPTION Value="5">Semester 5</OPTION>
+                            <OPTION Value="6">Semester 6</OPTION>
+                            <OPTION Value="7">Semester 7</OPTION>
+                            <OPTION Value="8">Semester 8</OPTION>
+                            <OPTION Value="9">Semester 9</OPTION>
+                            <OPTION Value="10">Semester 10</OPTION>
+                            <OPTION Value="11">Semester 11</OPTION>
+                            <OPTION Value="12">Semester 12</OPTION>
+                            <OPTION Value="13">Semester 13</OPTION>
+                            <OPTION Value="14">Semester 14</OPTION>
+                            <OPTION Value="15">Semester 15</OPTION>
+                            <OPTION Value="16">Semester 16</OPTION>
+                            <OPTION Value="17">Semester 17</OPTION>
+                            <OPTION Value="18">Semester 18</OPTION>
+                            <OPTION Value="19">Semester 19</OPTION>
+                            <OPTION Value="20">Semester 20</OPTION>
+                        </SELECT>
+                    </td>
+                    <td>Semester 13: <input type="text" id="GPAResult13"></td>
+                </tr>
+                <tr>
+                    <td><input type="text" name="name14" id="GPAName14" placeholder="Enter Name:" /></td>
+                    <td><input type="text" name="Grade14" id="GPAGrade14" value="" /></td>
+                    <td><input type="text" name="Credit14" id="GPACredit14" value="" /></td>
+                    <td>
+                        <SELECT id="Semester14">
+                            <OPTION Value="1">Semester 1</OPTION>
+                            <OPTION Value="2">Semester 2</OPTION>
+                            <OPTION Value="3">Semester 3</OPTION>
+                            <OPTION Value="4">Semester 4</OPTION>
+                            <OPTION Value="5">Semester 5</OPTION>
+                            <OPTION Value="6">Semester 6</OPTION>
+                            <OPTION Value="7">Semester 7</OPTION>
+                            <OPTION Value="8">Semester 8</OPTION>
+                            <OPTION Value="9">Semester 9</OPTION>
+                            <OPTION Value="10">Semester 10</OPTION>
+                            <OPTION Value="11">Semester 11</OPTION>
+                            <OPTION Value="12">Semester 12</OPTION>
+                            <OPTION Value="13">Semester 13</OPTION>
+                            <OPTION Value="14">Semester 14</OPTION>
+                            <OPTION Value="15">Semester 15</OPTION>
+                            <OPTION Value="16">Semester 16</OPTION>
+                            <OPTION Value="17">Semester 17</OPTION>
+                            <OPTION Value="18">Semester 18</OPTION>
+                            <OPTION Value="19">Semester 19</OPTION>
+                            <OPTION Value="20">Semester 20</OPTION>
+                        </SELECT>
+                    </td>
+                    <td>Semester 14: <input type="text" id="GPAResult14"></td>
+                </tr>
+                <tr>
+                    <td><input type="text" name="name15" id="GPAName15" placeholder="Enter Name:" /></td>
+                    <td><input type="text" name="Grade15" id="GPAGrade15" value="" /></td>
+                    <td><input type="text" name="Credit15" id="GPACredit15" value="" /></td>
+                    <td>
+                        <SELECT id="Semester15">
+                            <OPTION Value="1">Semester 1</OPTION>
+                            <OPTION Value="2">Semester 2</OPTION>
+                            <OPTION Value="3">Semester 3</OPTION>
+                            <OPTION Value="4">Semester 4</OPTION>
+                            <OPTION Value="5">Semester 5</OPTION>
+                            <OPTION Value="6">Semester 6</OPTION>
+                            <OPTION Value="7">Semester 7</OPTION>
+                            <OPTION Value="8">Semester 8</OPTION>
+                            <OPTION Value="9">Semester 9</OPTION>
+                            <OPTION Value="10">Semester 10</OPTION>
+                            <OPTION Value="11">Semester 11</OPTION>
+                            <OPTION Value="12">Semester 12</OPTION>
+                            <OPTION Value="13">Semester 13</OPTION>
+                            <OPTION Value="14">Semester 14</OPTION>
+                            <OPTION Value="15">Semester 15</OPTION>
+                            <OPTION Value="16">Semester 16</OPTION>
+                            <OPTION Value="17">Semester 17</OPTION>
+                            <OPTION Value="18">Semester 18</OPTION>
+                            <OPTION Value="19">Semester 19</OPTION>
+                            <OPTION Value="20">Semester 20</OPTION>
+                        </SELECT>
+                    </td>
+                    <td>Semester 15: <input type="text" id="GPAResult15"></td>
+                </tr>
+                <tr>
+                    <td><input type="text" name="name16" id="GPAName16" placeholder="Enter Name:" /></td>
+                    <td><input type="text" name="Grade16" id="GPAGrade16" value="" /></td>
+                    <td><input type="text" name="Credit16" id="GPACredit16" value="" /></td>
+                    <td>
+                        <SELECT id="Semester16">
+                            <OPTION Value="1">Semester 1</OPTION>
+                            <OPTION Value="2">Semester 2</OPTION>
+                            <OPTION Value="3">Semester 3</OPTION>
+                            <OPTION Value="4">Semester 4</OPTION>
+                            <OPTION Value="5">Semester 5</OPTION>
+                            <OPTION Value="6">Semester 6</OPTION>
+                            <OPTION Value="7">Semester 7</OPTION>
+                            <OPTION Value="8">Semester 8</OPTION>
+                            <OPTION Value="9">Semester 9</OPTION>
+                            <OPTION Value="10">Semester 10</OPTION>
+                            <OPTION Value="11">Semester 11</OPTION>
+                            <OPTION Value="12">Semester 12</OPTION>
+                            <OPTION Value="13">Semester 13</OPTION>
+                            <OPTION Value="14">Semester 14</OPTION>
+                            <OPTION Value="15">Semester 15</OPTION>
+                            <OPTION Value="16">Semester 16</OPTION>
+                            <OPTION Value="17">Semester 17</OPTION>
+                            <OPTION Value="18">Semester 18</OPTION>
+                            <OPTION Value="19">Semester 19</OPTION>
+                            <OPTION Value="20">Semester 20</OPTION>
+                        </SELECT>
+                    </td>
+                    <td>Semester 16: <input type="text" id="GPAResult16"></td>
+                </tr>
+                <tr>
+                    <td><input type="text" name="name17" id="GPAName17" placeholder="Enter Name:" /></td>
+                    <td><input type="text" name="Grade17" id="GPAGrade17" value="" /></td>
+                    <td><input type="text" name="Credit17" id="GPACredit17" value="" /></td>
+                    <td>
+                        <SELECT id="Semester17">
+                            <OPTION Value="1">Semester 1</OPTION>
+                            <OPTION Value="2">Semester 2</OPTION>
+                            <OPTION Value="3">Semester 3</OPTION>
+                            <OPTION Value="4">Semester 4</OPTION>
+                            <OPTION Value="5">Semester 5</OPTION>
+                            <OPTION Value="6">Semester 6</OPTION>
+                            <OPTION Value="7">Semester 7</OPTION>
+                            <OPTION Value="8">Semester 8</OPTION>
+                            <OPTION Value="9">Semester 9</OPTION>
+                            <OPTION Value="10">Semester 10</OPTION>
+                            <OPTION Value="11">Semester 11</OPTION>
+                            <OPTION Value="12">Semester 12</OPTION>
+                            <OPTION Value="13">Semester 13</OPTION>
+                            <OPTION Value="14">Semester 14</OPTION>
+                            <OPTION Value="15">Semester 15</OPTION>
+                            <OPTION Value="16">Semester 16</OPTION>
+                            <OPTION Value="17">Semester 17</OPTION>
+                            <OPTION Value="18">Semester 18</OPTION>
+                            <OPTION Value="19">Semester 19</OPTION>
+                            <OPTION Value="20">Semester 20</OPTION>
+                        </SELECT>
+                    </td>
+                    <td>Semester 17: <input type="text" id="GPAResult17"></td>
+                </tr>
+                <tr>
+                    <td><input type="text" name="name18" id="GPAName18" placeholder="Enter Name:" /></td>
+                    <td><input type="text" name="Grade18" id="GPAGrade18" value="" /></td>
+                    <td><input type="text" name="Credit18" id="GPACredit18" value="" /></td>
+                    <td>
+                        <SELECT id="Semester18">
+                            <OPTION Value="1">Semester 1</OPTION>
+                            <OPTION Value="2">Semester 2</OPTION>
+                            <OPTION Value="3">Semester 3</OPTION>
+                            <OPTION Value="4">Semester 4</OPTION>
+                            <OPTION Value="5">Semester 5</OPTION>
+                            <OPTION Value="6">Semester 6</OPTION>
+                            <OPTION Value="7">Semester 7</OPTION>
+                            <OPTION Value="8">Semester 8</OPTION>
+                            <OPTION Value="9">Semester 9</OPTION>
+                            <OPTION Value="10">Semester 10</OPTION>
+                            <OPTION Value="11">Semester 11</OPTION>
+                            <OPTION Value="12">Semester 12</OPTION>
+                            <OPTION Value="13">Semester 13</OPTION>
+                            <OPTION Value="14">Semester 14</OPTION>
+                            <OPTION Value="15">Semester 15</OPTION>
+                            <OPTION Value="16">Semester 16</OPTION>
+                            <OPTION Value="17">Semester 17</OPTION>
+                            <OPTION Value="18">Semester 18</OPTION>
+                            <OPTION Value="19">Semester 19</OPTION>
+                            <OPTION Value="20">Semester 20</OPTION>
+                        </SELECT>
+                    </td>
+                    <td>Semester 18: <input type="text" id="GPAResult18"></td>
+                </tr>
+                <tr>
+                    <td><input type="text" name="name19" id="GPAName19" placeholder="Enter Name:" /></td>
+                    <td><input type="text" name="Grade19" id="GPAGrade19" value="" /></td>
+                    <td><input type="text" name="Credit19" id="GPACredit19" value="" /></td>
+                    <td>
+                        <SELECT id="Semester19">
+                            <OPTION Value="1">Semester 1</OPTION>
+                            <OPTION Value="2">Semester 2</OPTION>
+                            <OPTION Value="3">Semester 3</OPTION>
+                            <OPTION Value="4">Semester 4</OPTION>
+                            <OPTION Value="5">Semester 5</OPTION>
+                            <OPTION Value="6">Semester 6</OPTION>
+                            <OPTION Value="7">Semester 7</OPTION>
+                            <OPTION Value="8">Semester 8</OPTION>
+                            <OPTION Value="9">Semester 9</OPTION>
+                            <OPTION Value="10">Semester 10</OPTION>
+                            <OPTION Value="11">Semester 11</OPTION>
+                            <OPTION Value="12">Semester 12</OPTION>
+                            <OPTION Value="13">Semester 13</OPTION>
+                            <OPTION Value="14">Semester 14</OPTION>
+                            <OPTION Value="15">Semester 15</OPTION>
+                            <OPTION Value="16">Semester 16</OPTION>
+                            <OPTION Value="17">Semester 17</OPTION>
+                            <OPTION Value="18">Semester 18</OPTION>
+                            <OPTION Value="19">Semester 19</OPTION>
+                            <OPTION Value="20">Semester 20</OPTION>
+                        </SELECT>
+                    </td>
+                    <td>Semester 19: <input type="text" id="GPAResult19"></td>
+                </tr>
+                <tr>
+                    <td><input type="text" name="name20" id="GPAName20" placeholder="Enter Name:" /></td>
+                    <td><input type="text" name="Grade20" id="GPAGrade20" value="" /></td>
+                    <td><input type="text" name="Credit20" id="GPACredit20" value="" /></td>
+                    <td>
+                        <SELECT id="Semester20">
+                            <OPTION Value="1">Semester 1</OPTION>
+                            <OPTION Value="2">Semester 2</OPTION>
+                            <OPTION Value="3">Semester 3</OPTION>
+                            <OPTION Value="4">Semester 4</OPTION>
+                            <OPTION Value="5">Semester 5</OPTION>
+                            <OPTION Value="6">Semester 6</OPTION>
+                            <OPTION Value="7">Semester 7</OPTION>
+                            <OPTION Value="8">Semester 8</OPTION>
+                            <OPTION Value="9">Semester 9</OPTION>
+                            <OPTION Value="10">Semester 10</OPTION>
+                            <OPTION Value="11">Semester 11</OPTION>
+                            <OPTION Value="12">Semester 12</OPTION>
+                            <OPTION Value="13">Semester 13</OPTION>
+                            <OPTION Value="14">Semester 14</OPTION>
+                            <OPTION Value="15">Semester 15</OPTION>
+                            <OPTION Value="16">Semester 16</OPTION>
+                            <OPTION Value="17">Semester 17</OPTION>
+                            <OPTION Value="18">Semester 18</OPTION>
+                            <OPTION Value="19">Semester 19</OPTION>
+                            <OPTION Value="20">Semester 20</OPTION>
+                        </SELECT>
+                    </td>
+                    <td>Semester 20: <input type="text" id="GPAResult20"></td>
+                </tr>
+
+            </table>
+            <!--Added the "Calculate" button, this allows for the usage of the javascript file which runs the calculations-->
+            <input id="submitPass1"
+                   class="submitTheCriteria" type="BUTTON" value="Calculate" name="CalcButton" OnClick="calculateGPA()" />
+            <!--the field that the javascript calculations use to print the accurate GPA-->
+            <!--A conversion chart of grades to numerical scores, allows for accurate GPA even if your school shows your differently-->
+
+
         </div>
-        <table style="width:25%;
-           background-color: rgb(255, 255, 255)">
-            <tr>
-                <th style="width:20%">Grade Name</th>
-                <th>Grade</th>
-                <th>Credits</th>
-            </tr>
-            <tr>
-                <td><input type="text" name="name1" id="GPAName1" value="Enter Name:"></td>
-                <td><input type="text" name="Grade1" id="GPAGrade1" value="Enter Letter Grade:"></td>
-                <td><input type="text" name="Credit1" id="GPACredit1" value=""></td>
-                <td></td>
-            </tr>
-            <tr>
-                <td><input type="text" name="name2" id="GPAName2"value="Enter Name:"></td>
-                <td><input type="text" name="Grade2" id="GPAGrade2"value="Enter Letter Grade:"></td>
-                <td><input type="text" name="Credit2" id="GPACredit2"value=""></td>
-                <td></td>
-            </tr>
-            <tr>
-                <td><input type="text" name="name3" id="GPAName3"value="Enter Name:"></td>
-                <td><input type="text" name="Grade3" id="GPAGrade3"value="Enter Letter Grade:"></td>
-                <td><input type="text" name="Credit3" id="GPACredit3"value=""></td>
-                <td></td>
-            </tr>
-        </table>
-        <INPUT TYPE="BUTTON" VALUE="Calculate"
-               NAME="CalcButton"
-               OnClick="gpacalc()" />
-        <div id="GPAResult">GPA </div>
-        <script>
-            const GPAGrade1 = document.getElementById('GPAGrade1')
-            const GPAGrade2 = document.getElementById('GPAGrade2')
-            const GPAGrade3 = document.getElementById('GPAGrade3')
-            const GPACredit1 = document.getElementById('GPACredit1')
-            const GPACredit2 = document.getElementById('GPACredit2')
-            const GPACredit3 = document.getElementById('GPACredit3')
-            const GPAResult = document.getElementById('GPAResult')
-            function gpacalc() {
-                var grades = new Array(9);
-                var credit = new Array(9);
-                var ingrades = new Array(5);
-                var incredit = new Array(5);
-
-                var grcount = 11;
-                grades[0] = "A+";
-                credit[0] = 5;
-                grades[1] = "A";
-                credit[1] = 4;
-                grades[2] = "A-";
-                credit[2] = 3.66;
-                grades[3] = "B+";
-                credit[3] = 3.33;
-                grades[4] = "B";
-                credit[4] = 3;
-                grades[5] = "B-";
-                credit[5] = 2.66;
-                grades[6] = "C+";
-                credit[6] = 2.33;
-                grades[7] = "C";
-                credit[7] = 2;
-                grades[8] = "C-";
-                credit[8] = 1.66;
-                grades[9] = "D";
-                credit[9] = 1;
-                grades[10] = "F";
-                credit[10] = 0;
-                // retrieve user input
-                ingrades[0] = document.GPAGrade1.value;
-                ingrades[1] = document.GPAGrade2.value;
-                ingrades[2] = document.GPAGrade3.value;
-                incredit[0] = document.GPACredit1.value;
-                incredit[1] = document.GPACredit2.value;
-                incredit[2] = document.GPACredit3.value;
-                // Calculate GPA
-                var allgrades = 0;
-                var allcredit = 0;
-                var gpa = 0;
-                for (var x = 0; x < 5 + 3; x++) {
-                    if (ingrades[x] == "") break;
-                    var gradecheck = 0;
-                    for (var xx = 0; xx < grcount; xx++) {
-                        if (ingrades[x] == grades[xx]) {
-                            allgrades = allgrades + (parseInt(incredit[x], 10) * credit[xx]);
-                            allcredit = allcredit + parseInt(incredit[x], 10);
-                            gradecheck = 1;
-                            break;
-                        }
-                    }
-                    if (gradecheck == 0) {
-                        alert("Error- Could not recognize the grade entered for Class " + eval(x + 1) + ". Please use standard college grades in the form of A A- B+ ...F.");
-                        return 0;
-                    }
-                }
-
-                // for a divide by 0 error
-                if (allcredit == 0) {
-                    alert("Error- You did not enter any credit values! GPA = N/A");
-                    return 0;
-                }
-               GPAResult.innerText = allgrades / allcredit;
-
-
-                alert("GPA =  " + eval(gpa));
-
-                return 0;
-            }
-
-//-->
-
-        </script>
-
-
-
-
-
     </div>
-    <style>
-        table, th, td {
-            border: 1px solid black;
-            border-collapse: collapse;
-        }
-    </style>
+    <!--Uses the file "GPACalc.js" to calculate the accurate GPA-->
+    <script src="GPACalc.js"></script>
+    <!--adds the responsiveness to the nav bar-->
+    <script src="project.js"></script>
 </body>
-
-
 </html>
