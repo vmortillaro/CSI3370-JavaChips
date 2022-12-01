@@ -177,6 +177,51 @@ var cal = {
     disclaimer();
     return false;
   },
+  
+  // (F.1) Pull 
+  /*function timeSlotString(){
+    let stringAnswer="";
+    if(document.getElementById('9AM').checked)
+    {
+      stringAnswer+=" Your event is taking place on time(s) :  9AM \n "
+    }
+    if(document.getElementById('10AM').checked)
+    {
+      stringAnswer+=" Your event is taking place on time(s) :  10AM \n "
+    }
+    if(document.getElementById('11AM').checked)
+    {
+      stringAnswer+=" Your event is taking place on time(s) :  11AM \n "
+    }
+    if(document.getElementById('12PM').checked)
+    {
+      stringAnswer+=" Your event is taking place on time(s) :  12PM \n "
+    }
+    if(document.getElementById('1PM').checked)
+    {
+      stringAnswer+=" Your event is taking place on time(s) :  1PM \n "
+    }
+    if(document.getElementById('2PM').checked)
+    {
+      stringAnswer+=" Your event is taking place on time(s) :  2PM \n "
+    }
+    if(document.getElementById('3PM').checked)
+    {
+      stringAnswer+=" Your event is taking place on time(s) :  3PM \n "
+    }
+    if(document.getElementById('4PM').checked)
+    {
+      stringAnswer+=" Your event is taking place on time(s) :  4PM \n "
+    }
+    if(document.getElementById('5PM').checked)
+    {
+      stringAnswer+=" Your event is taking place on time(s) :  5PM \n "
+    }
+    if(document.getElementById('allDay').checked)
+    {
+      stringAnswer+=" Your event is taking place on time(s) :  All Day \n "
+    }
+  }*/
 
   // (G) DELETE EVENT FOR SELECTED DATE
   del : () => { if (confirm("Delete event?")) {
