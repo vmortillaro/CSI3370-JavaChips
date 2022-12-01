@@ -1,8 +1,8 @@
 const navSlider = () => {
-  const burger = document.querySelector(".hamburger");
+  const burger = document.querySelector(".hamburger");//this is pulling from the HTML file
   const nav = document.querySelector(".navItems");
   const navLinks = document.querySelectorAll(".navItems li");
-
+  //this is the function when the three lines appear for the user when they click it it will display the tabs
   burger.addEventListener("click", () => {
     nav.classList.toggle("nav-active");
   });
@@ -16,192 +16,72 @@ const navSlider = () => {
 //Calling the function to run everything
 navSlider();
 
-//
 
-var cal = {
-  // (A) PROPERTIES
-  // (A1) COMMON CALENDAR
-  sMon : false, // Week start on Monday?
-  mName : ["Jan", "Feb", "Mar", "Apr", "May", "Jun", "Jul", "Aug", "Sep", "Oct", "Nov", "Dec"], // Month Names
+//making the code for the password generator
+const lengthOfPass= document.getElementById('length');//here I am grabbing the length inputted by user
+const form_in_UI= document.getElementById('passwordGeneratorForm');//here I am grabbing the form being used by user
+const UpperCase1= document.getElementById('UpperCase');//here I am grabbing the checkbox that the user hopefully inputted
+const lowerCase1= document.getElementById('LowerCase');//here I am grabbing whether or not the user wants lower case letters
+const numberCase1= document.getElementById('NumberFilter');//here I am grabbing whether or not the user wants to include numbers 
+const SpecialCase1= document.getElementById('SpecialSymbols');//Here I am grabbing the section where the user decides whether or not they need special chars
+const passwordDisplay = document.getElementById('pass1')//here I am grabbing the section that will have the password
+const arrUpper=loopForAscii(65,90);//Here I am looping through the ASCII representations for Upper case letters and putting into an Array
+const arrLower=loopForAscii(97,122);//Here I am looping through the ASCII representations for lower case letters and putting into an Array
+const arrSpecial=loopForAscii(32,47).concat(loopForAscii(58,64)).concat(loopForAscii(91,96)).concat(loopForAscii(123,126));//Here I am looping through the ASCII representations for special characters and putting into an Array
+const arrNumbers=loopForAscii(48,57);//Here I am looping through the ASCII representations for numbers and putting into an Array
+//this function is for everytime the user presses the submit button it will continuously update the value
+function submitPassReq(){
+let length1=lengthOfPass.value
+const upper1=UpperCase1.checked//the .checked will just determine whether or not the user checked the box. The checked returns a boolean
+const lower1=lowerCase1.checked
+const special1=SpecialCase1.checked
+const num1=numberCase1.checked
+if(length1==""){//if the user doesnt anything in length, I will default it to length of 20 to ensure something will display on the screen
+  length1= 20
+}
+passwordDisplay.innerText = generatePass(length1,upper1, lower1,special1,num1)//generate password will be the function actually creating the password
+//I am taking the section that will display the password and updating it with the .innerText 
 
-  // (A2) CALENDAR DATA
-  data : null, // Events for the selected period
-  sDay : 0, sMth : 0, sYear : 0, // Current selected day, month, year
-
-  // (A3) COMMON HTML ELEMENTS
-  hMth : null, hYear : null, // month/year selector
-  hForm : null, hfHead : null, hfDate : null, hfTxt : null, hfDel : null, // event form
-
-  // (B) INIT CALENDAR
-  init : () => {
-    // (B1) GET + SET COMMON HTML ELEMENTS
-    cal.hMth = document.getElementById("cal-mth");
-    cal.hYear = document.getElementById("cal-yr");
-    cal.hForm = document.getElementById("cal-event");
-    cal.hfHead = document.getElementById("evt-head");
-    cal.hfDate = document.getElementById("evt-date");
-    cal.hfTxt = document.getElementById("evt-details");
-    cal.hfDel = document.getElementById("evt-del");
-    document.getElementById("evt-close").onclick = cal.close;
-    cal.hfDel.onclick = cal.del;
-    cal.hForm.onsubmit = cal.save;
-
-    // (B2) DATE NOW
-    let now = new Date(),
-        nowMth = now.getMonth(),
-        nowYear = parseInt(now.getFullYear());
-
-    // (B3) APPEND MONTHS SELECTOR
-    for (let i=0; i<12; i++) {
-      let opt = document.createElement("option");
-      opt.value = i;
-      opt.innerHTML = cal.mName[i];
-      if (i==nowMth) { opt.selected = true; }
-      cal.hMth.appendChild(opt);
-    }
-    cal.hMth.onchange = cal.list;
-
-    // (B4) APPEND YEARS SELECTOR
-    // Set to 10 years range. Change this as you like.
-    for (let i=nowYear-10; i<=nowYear+10; i++) {
-      let opt = document.createElement("option");
-      opt.value = i;
-      opt.innerHTML = i;
-      if (i==nowYear) { opt.selected = true; }
-      cal.hYear.appendChild(opt);
-    }
-    cal.hYear.onchange = cal.list;
-
-    // (B5) START - DRAW CALENDAR
-    cal.list();
-  },
-
-  // (C) DRAW CALENDAR FOR SELECTED MONTH
-  list : () => {
-    // (C1) BASIC CALCULATIONS - DAYS IN MONTH, START + END DAY
-    // Note - Jan is 0 & Dec is 11
-    // Note - Sun is 0 & Sat is 6
-    cal.sMth = parseInt(cal.hMth.value); // selected month
-    cal.sYear = parseInt(cal.hYear.value); // selected year
-    let daysInMth = new Date(cal.sYear, cal.sMth+1, 0).getDate(), // number of days in selected month
-        startDay = new Date(cal.sYear, cal.sMth, 1).getDay(), // first day of the month
-        endDay = new Date(cal.sYear, cal.sMth, daysInMth).getDay(), // last day of the month
-        now = new Date(), // current date
-        nowMth = now.getMonth(), // current month
-        nowYear = parseInt(now.getFullYear()), // current year
-        nowDay = cal.sMth==nowMth && cal.sYear==nowYear ? now.getDate() : null ;
-
-    // (C2) LOAD DATA FROM LOCALSTORAGE
-    cal.data = localStorage.getItem("cal-" + cal.sMth + "-" + cal.sYear);
-    if (cal.data==null) {
-      localStorage.setItem("cal-" + cal.sMth + "-" + cal.sYear, "{}");
-      cal.data = {};
-    } else { cal.data = JSON.parse(cal.data); }
-
-    // (C3) DRAWING CALCULATIONS
-    // Blank squares before start of month
-    let squares = [];
-    if (cal.sMon && startDay != 1) {
-      let blanks = startDay==0 ? 7 : startDay ;
-      for (let i=1; i<blanks; i++) { squares.push("b"); }
-    }
-    if (!cal.sMon && startDay != 0) {
-      for (let i=0; i<startDay; i++) { squares.push("b"); }
-    }
-
-    // Days of the month
-    for (let i=1; i<=daysInMth; i++) { squares.push(i); }
-
-    // Blank squares after end of month
-    if (cal.sMon && endDay != 0) {
-      let blanks = endDay==6 ? 1 : 7-endDay;
-      for (let i=0; i<blanks; i++) { squares.push("b"); }
-    }
-    if (!cal.sMon && endDay != 6) {
-      let blanks = endDay==0 ? 6 : 6-endDay;
-      for (let i=0; i<blanks; i++) { squares.push("b"); }
-    }
-
-    // (C4) DRAW HTML CALENDAR
-    // Get container
-    let container = document.getElementById("cal-container"),
-    cTable = document.createElement("table");
-    cTable.id = "calendar";
-    container.innerHTML = "";
-    container.appendChild(cTable);
-
-    // First row - Day names
-    let cRow = document.createElement("tr"),
-        days = ["Sun", "Mon", "Tue", "Wed", "Thur", "Fri", "Sat"];
-    if (cal.sMon) { days.push(days.shift()); }
-    for (let d of days) {
-      let cCell = document.createElement("td");
-      cCell.innerHTML = d;
-      cRow.appendChild(cCell);
-    }
-    cRow.classList.add("head");
-    cTable.appendChild(cRow);
-
-    // Days in Month
-    let total = squares.length;
-    cRow = document.createElement("tr");
-    cRow.classList.add("day");
-    for (let i=0; i<total; i++) {
-      let cCell = document.createElement("td");
-      if (squares[i]=="b") { cCell.classList.add("blank"); }
-      else {
-        if (nowDay==squares[i]) { cCell.classList.add("today"); }
-        cCell.innerHTML = `<div class="dd">${squares[i]}</div>`;
-        if (cal.data[squares[i]]) {
-          cCell.innerHTML += "<div class='evt'>" + cal.data[squares[i]] + "</div>";
-        }
-        cCell.onclick = () => { cal.show(cCell); };
-      }
-      cRow.appendChild(cCell);
-      if (i!=0 && (i+1)%7==0) {
-        cTable.appendChild(cRow);
-        cRow = document.createElement("tr");
-        cRow.classList.add("day");
-      }
-    }
-
-    // (C5) REMOVE ANY PREVIOUS ADD/EDIT EVENT DOCKET
-    cal.close();
-  },
-
-  // (D) SHOW EDIT EVENT DOCKET FOR SELECTED DAY
-  show : (el) => {
-    // (D1) FETCH EXISTING DATA
-    cal.sDay = el.getElementsByClassName("dd")[0].innerHTML;
-    let isEdit = cal.data[cal.sDay] !== undefined ;
-
-    // (D2) UPDATE EVENT FORM
-    cal.hfTxt.value = isEdit ? cal.data[cal.sDay] : "" ;
-    cal.hfHead.innerHTML = isEdit ? "EDIT EVENT" : "ADD EVENT" ;
-    cal.hfDate.innerHTML = `${cal.sDay} ${cal.mName[cal.sMth]} ${cal.sYear}`;
-    if (isEdit) { cal.hfDel.classList.remove("ninja"); }
-    else { cal.hfDel.classList.add("ninja"); }
-    cal.hForm.classList.remove("ninja");
-  },
-
-  // (E) CLOSE EVENT DOCKET
-  close : () => {
-    cal.hForm.classList.add("ninja");
-  },
-
-  // (F) SAVE EVENT
-  save : () => {
-    cal.data[cal.sDay] = cal.hfTxt.value;
-    localStorage.setItem(`cal-${cal.sMth}-${cal.sYear}`, JSON.stringify(cal.data));
-    cal.list();
-    return false;
-  },
-
-  // (G) DELETE EVENT FOR SELECTED DATE
-  del : () => { if (confirm("Delete event?")) {
-    delete cal.data[cal.sDay];
-    localStorage.setItem(`cal-${cal.sMth}-${cal.sYear}`, JSON.stringify(cal.data));
-    cal.list();
-  }}
-};
-window.addEventListener("load", cal.init);
+}
+function generatePass(length1,upper1,lower1,special1,num1) {
+  let arryWCriteria=new Array()//this array will be populated depending on what the user inputs
+  //the if statements will begin to execute and the array will continuously be added to with the confirmation that the user needs specific criteria
+  if(lower1){
+    arryWCriteria = arryWCriteria.concat(arrLower)
+  }
+  if(upper1){
+    arryWCriteria = arryWCriteria.concat(arrUpper)
+  }
+ if(special1){
+  arryWCriteria = arryWCriteria.concat(arrSpecial)
+  }
+ if(num1){
+  arryWCriteria =  arryWCriteria.concat(arrNumbers)
+  }
+  //if the user does not enter anything into the form, this will default with all the criteria to be outputted by the system
+  else if(!upper1 & !lower1 & !special1 & !num1 ){
+    arryWCriteria = arryWCriteria.concat(arrUpper).concat(arrLower).concat(arrSpecial).concat(arrNumbers)
+  }
+  let passwordSymbols=new Array()//we will begin to populate the password with the specified symbols from the user
+  for(let i=0;i<length1;i++){
+    let randNum=arryWCriteria[Math.floor(Math.random()*arryWCriteria.length)]//I figured out this function from my sources listed
+    passwordSymbols.push(String.fromCharCode(randNum))//taking the random symbols and using the push function to put the random characters into th password
+  }
+  return passwordSymbols.join('')//the .join() function is so when the array is being printed, it usually prints with commas to separate each element. Adding the '' will just concat everything together
+}
+//this function is just put to make the process of populating each array easier. In my sources they threw everything in one array and that didnt work for the way I designed this UI
+//So I just went ahead and created this to organize everything. I got the idea for listed sources
+function loopForAscii(low,high){
+  const arr=[]
+  for(let i=low;i<=high;i++){
+    arr.push(i);
+  }
+  return arr;
+}
+const copyBtnVar = document.getElementById('copyBtn')
+//passwordDisplay is the variable here that the clipboard will want to copy
+function CopyThePassword(){//when user wants to copy their password
+navigator.clipboard.writeText(passwordDisplay.innerText);//this will pull the passwords value and add it to the users clipboard
+alert('Text copied');//this will let the user know that they have successfully copied their new password
+}
+  
