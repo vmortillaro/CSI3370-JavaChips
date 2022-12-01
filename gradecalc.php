@@ -91,6 +91,7 @@ $display .= $numfieldsfield;
 $storednames=array($numfields);
 $storedgrades=array($numfields);
 $storedtotals=array($numfields);
+$storedcomments=array($numfields);
 
 //create a loop that outputs the correct number of fields
 
@@ -101,6 +102,7 @@ for ($index=0;$index<=($numfields-1); $index++){
 	$storednames[$index]=$_POST['assignmentname' . $index];
 	$storedgrades[$index]=intval($_POST['assignmentgrade' . $index]);
 	$storedtotals[$index]=intval($_POST['assignmenttotalpoints' . $index]);
+  $storedcomments[$index]=$_POST['assignmentcomment' . $index];
 
 	//create one instance of an assignment info field
 	$fieldinstance = <<<fieldinstance
@@ -110,7 +112,8 @@ for ($index=0;$index<=($numfields-1); $index++){
 <input style="flex-grow: 1" type='text' value='$storedgrades[$index]' name='assignmentgrade$index'>
 <label style="flex-grow: 1">/</label>
 <input style="flex-grow: 1" type='text' value='$storedtotals[$index]' name='assignmenttotalpoints$index'> <br />
-<br /><br />
+<label style="flex-grow: 1">Comments: </label>
+<input style="width: 80vh;" type='text' value='$storedcomments[$index]' name='assignmentcomment$index'><br /><br />
 fieldinstance;
 
 	//add it to the display
